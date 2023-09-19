@@ -1,0 +1,100 @@
+.bg-color-0 {
+  background-color: #EE7785;
+}
+
+.bg-color-1 {
+  background-color: rgb(88, 123, 218);
+}
+
+.bg-color-2 {
+  background-color: rgb(60, 164, 182);
+}
+.bg-color-none{
+  background-color: #aaaaaa;
+}
+.bg-color-3 {
+  background-color: #f16bac;
+}
+
+.bg-color-4 {
+  background-color: #ce945a ;
+}
+
+.bg-color-5 {
+  background-color: rgb(184, 89, 228);
+}
+
+.bg-color-6 {
+  background-color: #2198c0;
+}
+
+.bg-color-7 {
+  background-color: #d16c44;
+}
+
+.bg-color-8 {
+  background-color: rgb(40, 100, 129);
+}
+
+
+.bg-color-9 {
+  background-color: #a0674b;
+}
+
+.bg-color-10 {
+  background-color: rgb(180, 149, 225);
+}
+
+.bg-color-11 {
+  background-color: #609260;
+}
+
+.bg-color-12 {
+  background-color: rgb(211, 78, 91);
+}
+
+.bg-color-13 {
+  background-color: rgb(0, 150, 136);
+}
+
+.bg-color-14 {
+  background-color: rgb(34, 179, 70);
+}
+
+.bg-color-15 {
+  background-color: #c2677c;
+}
+
+.bg-color-16 {
+  background-color: #67beb0;
+}
+
+.bg-color-17 {
+  background-color: #8f527f;
+}
+
+.bg-color-18 {
+  background-color: #5ba573;
+}
+
+.bg-color-19 {
+  background-color: #167e60;
+}
+
+.bg-color-20 {
+  background-color: #c05d3f;
+}
+
+
+.bg-color-21 {
+  background-color: #eca438;
+}
+.bg-color-22 {
+  background-color: #3fc095;
+}
+.bg-color-23 {
+  background-color: #21a1a1;
+}
+.bg-color-24 {
+  background-color: #bb3688;
+}

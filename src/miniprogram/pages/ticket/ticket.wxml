@@ -1,0 +1,57 @@
+<!--miniprogram/pages/ticket/ticket.wxml-->
+<view class="ticket">
+		<view class="up">
+			<view class="img">
+				<image class="image-blur" src="../../static/Corporate-0017-Back.jpg" mode=""></image>
+				<view class="pad image-blur"></view>
+				<image class="image" src="../../static/Corporate-0017-Back.jpg" mode=""></image>
+			</view>
+			<view class="container">
+				<view class="left">
+					<view class="info">
+						<view class="infoItem">
+							<view class="infoItemKey">
+								活动名称
+							</view>
+							<view class="infoItemVal">
+								大山里施法比赛
+							</view>
+						</view>
+						<view class="infoItem">
+							<view class="infoItemKey">
+								主办方
+							</view>
+							<view class="infoItemVal">
+								魔法协会
+							</view>
+						</view>
+						<view class="infoItem">
+							<view class="infoItemKey">
+								联系方式
+							</view>
+							<view class="infoItemVal">
+								0000-50000000
+							</view>
+						</view>
+					</view>
+					<view class="infoText_grey_default infoOther">
+						温馨提示：本次活动麻瓜禁止参加，请各位魔法师不要在麻瓜面前施展魔法！
+					</view>
+				</view>
+				<view class="right">
+					<view class="qrcode">
+
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+		<view class="bottom">
+			<view class="btn">转让给他人</view>
+			<view class="text">
+				分享说明：主办方规定该门票允许转让，转让后您将无法通过该门票入场请谨慎操作。该门票禁止转卖，如果您是通过购买途径获得该门票，请及时告诉我们！
+			</view>
+		</view>
+
+	</view>

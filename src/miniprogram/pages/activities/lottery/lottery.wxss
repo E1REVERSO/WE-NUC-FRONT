@@ -1,0 +1,105 @@
+.swiper {
+    height: 320rpx;
+    /* border: 1rpx solid #000; */
+    border-radius: 12rpx;
+}
+
+.swiper image {
+    border-radius: 12rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.info {
+    margin-top: 12rpx;
+}
+
+.info .title {
+    font-weight: bold;
+    font-size: 36rpx;
+    color: #333333;
+}
+
+.info .detail {
+    font-size: 24rpx;
+    color: #555555;
+    padding: 8rpx 2rpx;
+}
+
+.join-button text {
+    color: #168ef0;
+    font-size: 32rpx;
+}
+
+.main_build .title {
+    font-size: 24rpx;
+}
+
+.sec_build .title {
+    font-size: 24rpx;
+}
+
+.main_build,
+.sec_build {
+    font-size: 24rpx;
+    color: #333333;
+}
+
+.out {
+    position: absolute;
+    left: 100000px;
+    bottom: 100000px;
+}
+
+.user_list {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.user_list .item,
+.reward_list .item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    color: #333333;
+    font-size: 28rpx;
+    padding-right: 32rpx;
+
+    border-radius: 32rpx;
+    background-color: #fff;
+    /* width: 48%; */
+
+    margin: 12rpx;
+
+    box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1);
+}
+.reward_list .reward{
+    font-size: 24rpx;
+    color: #DD5145;
+}
+
+.user-info__title {
+    /* padding: 28rpx; */
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
+    margin: 12rpx 0 8rpx 0;
+}
+
+.item .avatar {
+    height: 64rpx;
+    width: 64rpx;
+    margin-right: 16rpx;
+    border-radius: 50%;
+}
+
+.reward-set {
+    background-color: #fff;
+    padding: 24rpx;
+    margin: 24rpx 0;
+    border-radius: 8rpx;
+    box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1);
+}

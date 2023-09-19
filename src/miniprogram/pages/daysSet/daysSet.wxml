@@ -1,0 +1,29 @@
+<!--pages/daysSet/daysSet.wxml-->
+<van-cell-group>
+  <van-field model:value="{{ name }}" left-icon="todo-list" maxlength="12" placeholder="事件名称" />
+  <van-cell icon="clock" title="选择日期" bindtap="showDate" value="{{date}}" />
+  <van-cell icon="ascending" center title="置顶">
+    <view class="checkVal">
+      <van-switch checked="{{ top }}" size="40rpx" bind:change="setTop" />
+    </view>
+  </van-cell>
+  <van-cell title="重复" icon="replay" bindtap="showRepeat" is-link value="{{repeatList[repeat].name}}" />
+</van-cell-group>
+
+
+<van-popup show="{{ calendarShow }}" round position="bottom" custom-style="height: 60%" bind:close="calendarClose">
+  <view class="calendar">
+    <van-datetime-picker type="date" value="{{ t }}" min-date="{{ 0 }}" bind:confirm="setDate"
+      bind:cancel="calendarClose" />
+  </view>
+</van-popup>
+
+<van-action-sheet show="{{ repeatShow }}" actions="{{ repeatList }}" cancel-text="取消" bind:close="repeatClose"
+  bind:select="setRepeat" />
+
+
+<view class="operate">
+  <view class="btn save" bindtap="save" wx:if="{{type == 'user'}}">修改</view>
+  <view class="btn delete" bindtap="delete" wx:if="{{type == 'user'}}">删除</view>
+  <view class="btn add" bindtap="add" wx:if="{{type == 'cloud' || type == 'add'}}">新增</view>
+</view>

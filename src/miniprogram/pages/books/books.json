@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "图书检索",
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "waterFall": "/components/waterFall/waterFall",
+    "bookItem": "/components/bookItem/bookItem"
+  }
+}

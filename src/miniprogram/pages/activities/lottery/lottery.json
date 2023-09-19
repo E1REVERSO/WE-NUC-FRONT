@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "助力抽奖",
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "wxml-to-canvas": "wxml-to-canvas",
+    "van-share-sheet": "@vant/weapp/share-sheet/index"
+  }
+}

@@ -1,0 +1,20 @@
+<view class="info">
+    <image class="icon" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fxsj%2F0s%2Fx9%2F64.jpg%21%2Ffw%2F700%2Fwatermark%2Furl%2FL3hzai93YXRlcl9kZXRhaWwyLnBuZw%2Falign%2Fsoutheast&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1651567823&t=e47be989a6fa145fa61cb97d69ee4c6a"></image>
+    <view class="title">{{title}}</view>
+    <view style="color:#777;font-size:24rpx;margin-left:12rpx">|</view>
+    <view class="subTitle" style="margin-left: 12rpx;">{{subTitle}}</view>
+</view>
+<view class="group" style="{{reverse?'flex-direction: row-reverse;':'row'}}">
+    <view class="big">
+        <slot name="big"></slot>
+    </view>
+
+
+    <view class="small">
+        <slot name="small"></slot>
+
+    </view>
+
+
+
+</view>

@@ -1,0 +1,21 @@
+.part {
+  background-color: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 0 12rpx #cecece;
+  padding: 24rpx;
+}
+
+.part+.part {
+  margin-top: 24rpx;
+}
+
+.part .title {
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #33333327;
+  padding-bottom: 12rpx;
+}
+
+.part .content {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+}

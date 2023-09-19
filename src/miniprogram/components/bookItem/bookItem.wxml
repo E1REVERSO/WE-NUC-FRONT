@@ -1,0 +1,22 @@
+<view class="tui-product__item {{isList ? 'tui-flex__list' : ''}}" hover-class="tui-hover" hover-start-time="150" bindtap="detail">
+	<div class="container__wrapper">
+		<div class="container__ribbon" style="{{entity.in_data.length>0?'background-color: #3a78fe;':'background-color: red;'}}">
+
+			<view class="stock">{{entity.in_data.length > 0 ?entity.in_data.length+'本在馆':'暂无馆藏'}}</view>
+		</div>
+	</div>
+
+	<view style="display: flex;justify-content: center;">
+		<image src="{{entity.detail.pic || 'https://cloud1-0glyq4v2627b233d-1306502030.tcloudbaseapp.com/1647137288098.jpg?sign=644accc459734a8db1520a45b82771b5&t=1647137303'}}" class="tui-product__img {{isList ? 'tui-img__list' : ''}}" mode="widthFix" />
+	</view>
+
+	<view class="tui-product__content">
+		<view class="tui-product__title">{{ entity.title || entity.detail.title }}</view>
+		<view class="author">{{entity.detail.author || entity.author}}</view>
+		<view class="pubdate">{{entity.detail.pubdate || ''}}</view>
+	</view>
+	<view class="score" style="display: flex;" wx:if="{{entity.score > 1000}}">
+		<van-icon name="fire" color="{{entity.score>50000?'#f15c21':(entity.score >5000?'#aa2511':'')}}" />
+		<view>{{entity.score}}</view>
+	</view>
+</view>

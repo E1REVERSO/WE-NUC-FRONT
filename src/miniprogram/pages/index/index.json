@@ -1,0 +1,20 @@
+{
+  "backgroundColorTop": "#3a79fe",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "swiperImg": "/components/swiperImg/swiperImg",
+    "leaderboard": "/components/leaderboard/leaderboard",
+    "mainMenu": "/components/mainMenu/mainMenu",
+    "todayCourse": "/components/todayCourse/todayCourse",
+    "days": "/components/days/days",
+    "hello": "/components/hello/hello",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "wether": "/components/weather/weather",
+    "balance": "/components/balance/balance",
+    "add-tips": "/components/add-tips/index",
+    "tui-footer": "/components/tui-footer/tui-footer",
+    "card": "/components/cards/cards",
+    "card-group": "./card_group/card_group"
+  }
+}

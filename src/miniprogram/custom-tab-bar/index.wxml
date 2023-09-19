@@ -1,0 +1,19 @@
+<!-- <van-tabbar active="{{activePage}}" bind:change="onChangePage">
+  <van-tabbar-item wx:for="{{list}}" info="{{item.info==0?'':item.info}}" wx:key="index" icon="{{item.icon}}">{{
+    item.text
+    }}</van-tabbar-item>
+</van-tabbar> -->
+
+<view class="main" style="margin-bottom: {{hide ? -tabBarHeight: 0}}px">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="item {{active == index ? 'active' : ''}}" data-index="{{index}}" bindtap="change">
+      <view class="icon">
+        <!-- <image src="{{item.icon}}" style=""></image>> -->
+        <van-icon class-prefix="yfme" name="{{item.icon}}" />
+      </view>
+      <view class="text">{{item.text}}</view>
+    </view>
+  </block>
+</view>
+
+<loginBar bottom="{{tabBarHeight}}" wx:if="{{!login && !hide}}" />

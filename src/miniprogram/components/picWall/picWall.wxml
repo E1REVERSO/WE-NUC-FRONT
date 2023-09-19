@@ -1,0 +1,58 @@
+<!--components/picWall/picWall.wxml-->
+<view class="main" wx:if="{{imgs.length}}">
+  <view class="photo-container">
+    <view id="photo" class="photo-cont-item animation-1" animation="{{ani}}">
+
+      <block wx:for="{{imgs.length>0?6/imgs.length:0}}" wx:key="*this">
+        <block wx:for="{{ imgs }}" wx:key="image">
+
+
+          <image mode="heightFix" class="photo-item" bindtap="action" data-type="{{item.type}}"
+            data-content1="{{item.content1}}" data-content2="{{item.content2}}" src="{{item.image}}" />
+
+
+        </block>
+        <block wx:for="{{ imgs }}" wx:key="image">
+
+
+          <image mode="heightFix" class="photo-item" bindtap="action" data-type="{{item.type}}"
+            data-content1="{{item.content1}}" data-content2="{{item.content2}}" src="{{item.image}}" />
+
+
+        </block>
+
+      </block>
+
+    </view>
+
+    <view class="photo-cont-item animation-2" animation="{{ani}}">
+
+      <block wx:for="{{imgs.length>0?6/imgs.length:0}}" wx:key="*this">
+        <block wx:for="{{ imgs }}" wx:key="image">
+
+
+          <image mode="heightFix" class="photo-item" bindtap="action" data-type="{{imgs[imgs.length - index - 1].type}}"
+            data-content1="{{imgs[imgs.length - index - 1].content1}}"
+            data-content2="{{imgs[imgs.length - index - 1].content2}}" src="{{imgs[imgs.length - index - 1].image}}" />
+
+
+        </block>
+        <block wx:for="{{ imgs }}" wx:key="image">
+
+
+          <image mode="heightFix" class="photo-item" bindtap="action" data-type="{{imgs[imgs.length - index - 1].type}}"
+            data-content1="{{imgs[imgs.length - index - 1].content1}}"
+            data-content2="{{imgs[imgs.length - index - 1].content2}}" src="{{imgs[imgs.length - index - 1].image}}" />
+
+
+        </block>
+
+      </block>
+
+
+    </view>
+
+
+  </view><!-- .photo-container -->
+
+</view>

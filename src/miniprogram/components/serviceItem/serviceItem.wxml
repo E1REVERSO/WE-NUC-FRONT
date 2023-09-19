@@ -1,0 +1,10 @@
+<!--components/serviceItem/serviceItem.wxml-->
+<view class="main">
+  <view class="part">{{info.part}}</view>
+  <view class="name">{{info.name}}</view>
+  <view class="signature">{{info.signature}}</view>
+  <view class="qrcode">
+    <image mode="aspectFit" src="{{info.code}}" />
+  </view>
+
+</view>

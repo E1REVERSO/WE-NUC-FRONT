@@ -1,0 +1,29 @@
+<!--components/daysinfoBar/daysinfoBar.wxml-->
+<view class="main" hover-class="main-hover" hover-stay-time="70">
+  <view class="left">
+    <view class="name">
+      <view class="star" wx:if="{{info.top}}">
+        <van-icon name="star" />
+      </view>
+      {{info.name}}
+    </view>
+    <view class="date">{{info.realdate}} {{info.week}}</view>
+  </view>
+
+  <view class="right">
+    <view class="days">
+
+      <view class="days__day positive" wx:if="{{ info.days > 0 }}">
+        {{info.days}} <text class="days__text">天</text>
+      </view>
+      <view class="days__day negative" wx:elif="{{ info.days < 0 }}">
+        {{-info.days}} <text class="days__text">天</text>
+      </view>
+      <view class="days__day zero" wx:else>
+        <!-- {{info.days}} <text class="days__text">天</text> -->
+        今天
+      </view>
+
+    </view>
+  </view>
+</view>

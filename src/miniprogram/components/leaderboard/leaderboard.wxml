@@ -1,0 +1,16 @@
+<view class="main">
+  <view class="top" hover-class="hover-top" hover-stay-time="70">
+    <view class="subtitle">学霸排行</view>
+    <view class="more">更多></view>
+  </view>
+
+  <view class="third"></view>
+  <view class="other"></view>
+  <!-- <view class="tabs">
+    <block wx:for="{{tabs}}" wx:for-item="tab" wx:key="index">
+      <view class="tab {{active == index?'active':''}}" bindtap="onClickTab" data-index="{{index}}">{{tab}}</view>
+    </block>
+  </view> -->
+
+
+</view>

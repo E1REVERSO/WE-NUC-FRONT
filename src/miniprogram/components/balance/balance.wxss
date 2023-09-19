@@ -1,0 +1,50 @@
+/* components/balance/balance.wxss */
+.main {
+  background-color: #fff;
+  /* padding: 12rpx; */
+  /* border-radius: 12rpx; */
+  border-radius: 20rpx;
+  /* box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1); */
+  /* border: 2rpx solid #eeeeee; */
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text {
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  /* gap: 24rpx; */
+}
+
+.data {
+  margin-left: 4rpx;
+  font-size: 28rpx;
+  color: #3A4EB8;
+}
+
+@keyframes rotateAnimation {
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

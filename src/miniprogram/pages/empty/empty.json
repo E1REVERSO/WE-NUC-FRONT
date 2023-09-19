@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "空教室",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+    "emptyRow": "/components/emptyRow/emptyRow",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "mp-sticky": "@miniprogram-component-plus/sticky"
+  }
+}

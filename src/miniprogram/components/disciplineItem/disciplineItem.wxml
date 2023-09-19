@@ -1,0 +1,41 @@
+<!--components/disciplineItem/disciplineItem.wxml-->
+<view class="main" hover-class="main-hover" hover-stay-time="70" bindtap="toDetail">
+  <!-- <van-skeleton row="5" loading="{{ loading }}" row-width="{{rowWidth}}" animate> -->
+  <tui-skeleton wx:if="{{loading}}" backgroundColor="#fafafa" borderRadius="10rpx" selector="tui-skeleton"></tui-skeleton>
+  <view class="tui-skeleton">
+    <view class="top">
+      <view class="top__left tui-skeleton-rect">
+
+        <view class="id">{{info.zyh_id}}</view>
+        <view class="name">{{info.zymc}}</view>
+
+      </view>
+
+      <view class="grade tui-skeleton-rect">年级：{{info.njmc}}</view>
+
+    </view>
+    <view class="middle">
+      <view class="detail">
+
+
+
+
+        <view class="courses-total tui-skeleton-rect">课程数：{{info.kcs?info.kcs:'加载中'}}</view>
+        <view class="class-total tui-skeleton-rect">班级个数：{{info.bjgs?info.bjgs:'加载中'}}</view>
+        <view class="students-total tui-skeleton-rect">计划人数：{{info.jhrs?info.jhrs:'加载中'}}</view>
+        <view class="credits-total tui-skeleton-rect">最低毕业学分：{{info.zdxf?info.zdxf:'加载中'}}</view>
+
+      </view>
+
+      <view class="right">
+        <view class="label">{{info.dlbs}}</view>
+      </view>
+    </view>
+
+    <view class="bottom">
+      更新日期：{{info.dateDigit}}
+    </view>
+  </view>
+
+  <!-- </van-skeleton> -->
+</view>

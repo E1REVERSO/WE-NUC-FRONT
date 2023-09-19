@@ -1,0 +1,12 @@
+<!--components/todayCourseItem/todayCourseItem.wxml-->
+<view class="item" hover-class="item-hover" hover-stay-time="70">
+  <view class="color-block {{color}}"></view>
+  <view class="item__info">
+    <view class="item__info__main">
+      <view class="name">{{name}}</view>
+      <view class="info">第{{sections}}节 {{time}}</view>
+      <view class="info">{{teacherName}}</view>
+    </view>
+    <view class="item__info__place">{{place}}</view>
+  </view>
+</view>

@@ -1,0 +1,96 @@
+<view class="head">
+    <van-search value="{{ value }}" bind:change="onChange" placeholder="请输入课程名称、教师姓名" bind:search="onSearch" action-text="搜索" show-action="{{false}}" focus />
+</view>
+<van-dialog use-slot title="课程详情" show="{{ show }}" show-cancel-button bind:confirm="onAdd" bind:close="onClose" cancelButtonText="好的" confirmButtonText="添加至课程表" confirm-button-color="#3A79fe">
+    <view class="detail">
+        <view class="info__item__name">课程名称 : {{detail.kcmc}}</view>
+        <view wx:if="{{detail.cdmc}}">上课教室 : {{detail.cdmc}}</view>
+        <view wx:if="{{detail.zcd}}">开课周数 : {{detail.zcd}}</view>
+        <view wx:if="{{detail.zcd}}">上课时间 : {{detail.xqjmc}} {{detail.jcs}}小节</view>
+        <view wx:if="{{detail.kcxszc}}">学时安排 : {{detail.kcxszc}}</view>
+        <view wx:if="{{detail.xm}}">任课教师 : {{detail.xm}}</view>
+        <view wx:if="{{detail.zcmc}}">教师职称 : {{detail.zcmc}}</view>
+        <view wx:if="{{detail.kcxz}}">课程性质 : {{detail.kcxz}}</view>
+        <view wx:if="{{detail.xf}}">课程学分 : {{detail.xf}}</view>
+
+    </view>
+</van-dialog>
+<wxs module="m1">
+    module.exports.getType = function (kcsx) {
+        switch (kcsx) {
+            case '必修':
+                return "danger"
+            case '选修':
+                return 'primary'
+            case '任选':
+                return 'success'
+            case '限选':
+                return 'warning'
+        }
+    }
+    module.exports.highLight = function (text, keyword, color, type) {
+        // var maxwidth = 550
+        text = text[type]
+        var searchIdx = text.indexOf(keyword)
+        // console.log(searchIdx)
+        var data = []
+        var sp = text.split('')
+        if (searchIdx == -1) {
+            for (var i = 0; i < sp.length; i++) {
+                data.push({
+                    color: color,
+                    value: sp[i]
+                })
+            }
+
+        } else {
+            var kwlength = keyword.length
+            // console.log(kwlength)
+            for (var i = 0; i < text.length; i++) {
+                data.push({
+                    color: (i >= searchIdx && i < searchIdx + kwlength) ? 'rgba(255, 53, 53, 0.651)' : color,
+                    value: sp[i]
+                })
+            }
+        }
+        return data
+
+    }
+</wxs>
+<view class="container" style="padding-top: {{head.height}}px;">
+    <view class="group" wx:if="{{list.length}}">
+        <block wx:for="{{list}}">
+            <view class="cell" hover-class="hover-cell" hover-stay-time="70" catchtap="onClickItem" data-index="{{index}}">
+                <view class="left">
+                    <view class="flex">
+                        <view class="title">
+                            <view class="kcmc"><text wx:for="{{m1.highLight(item,keyword,'#333','kcmc')}}" wx:for-item="it" wx:for-index="ind" wx:key="ind" style="color: {{it.color}} !important;">{{it.value}}</text></view>
+                            <van-tag type="{{m1.getType(item.kcxz)}}">{{item.kcxz}}</van-tag>
+
+                            <view class="xm"><text wx:for="{{m1.highLight(item,keyword,'#555','xm')}}" wx:for-item="it" wx:for-index="ind" wx:key="ind" style="color: {{it.color}} !important;">{{it.value}}</text>{{item.zcmc?'('+item.zcmc+')':''}}</view>
+                        </view>
+                    </view>
+
+                    <view class="flex">
+                        <view class="desc">{{item.cdmc}}</view>
+                        <view class="desc">{{item.zcd}}</view>
+                        <view class="desc">{{item.xqjmc}}</view>
+                        <view class="desc">{{item.jcs}}小节</view>
+                    </view>
+
+                </view>
+                <view class="right">
+                    <van-icon name="arrow" color="#999" />
+                </view>
+
+            </view>
+        </block>
+
+    </view>
+    <loadMore wx:if="{{loading}}" index="{{3}}" text="{{text}}" type="primary"></loadMore>
+    <noMore wx:if="{{count && list.length >= count}}"></noMore>
+
+</view>
+<view style="height: 100vh;display: flex;align-items: center;justify-content: center;position:absolute;left:0;right:0;top:0;bottom:0" wx:if="{{(!loading) && (!list.length)}}">
+    <van-empty image="search" description="{{info}}" />
+</view>

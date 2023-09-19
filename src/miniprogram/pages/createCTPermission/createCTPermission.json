@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxml-to-canvas": "wxml-to-canvas",
+    "van-share-sheet": "@vant/weapp/share-sheet/index"
+  }
+}

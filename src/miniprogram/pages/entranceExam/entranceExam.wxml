@@ -1,0 +1,138 @@
+<page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
+<navBar title='' background='#f6f6f6aa' blur="{{true}}" backgroundColorTop="f6f6f6">
+    <view slot="left" class="left-icons">
+        <view class="left-icons__item">
+            <!-- <navIcon iconName="cog" bind:tap="showSettings" /> -->
+            <navIcon iconName="arrow-left" prefix="fa" bind:tap="onBack" />
+
+        </view>
+        <view class="left-icons__item">
+            <!-- <navIcon iconName="cog" bind:tap="showSettings" /> -->
+            <navIcon iconName="filter" prefix="fa" bind:tap="onFilter" />
+
+        </view>
+        <view class="left-icons__item">
+            <navIcon iconName="search" wx:if="{{!search}}" prefix="fa" bind:tap="onSearch" />
+            <view class="item-list" wx:else>
+                <i class="fa fa-search" wx:if="{{search}}" prefix="fa" bind:tap="onSearch" />
+                <input model:value="{{input}}" focus="{{search}}" bindblur="onBlur" type="text" placeholder="例：中北大学" />
+            </view>
+            <!-- <navIcon iconName="plus" bind:tap="showAddCourse" /> -->
+        </view>
+
+
+    </view>
+</navBar>
+
+<view class="container">
+    <block wx:for="{{data}}" wx:key="SchoolUUID" wx:for-item="schoolItem">
+        <view class="out-item">
+
+            <view class="item">
+                <view class="item-left">
+                    <view class="image">
+                        <image src="{{schoolItem.CoverImage}}"></image>
+                    </view>
+
+                </view>
+                <view class="item-middle">
+                    <view class="name-part">
+                        <view class="name">
+                            {{schoolItem.CollegeName}}
+                        </view>
+                        <view class="tag-list">
+                            <view class="tag tag-red" wx:if="{{schoolItem.Is985}}">985</view>
+                            <view class="tag tag-blue" wx:if="{{schoolItem.Is211}}">211</view>
+                            <view class="tag tag-purple" wx:if="{{schoolItem.IsDualClass}}">双一流</view>
+                            <view class="tag tag-purple">{{schoolItem.CollegeType}}</view>
+                        </view>
+                    </view>
+                    <view class="other-info">
+                        <view class="address">{{schoolItem.Address}}</view>
+                    </view>
+
+
+
+                </view>
+                <!-- <view class="item-right">更多</view>？ -->
+            </view>
+            <view class="search-info">
+                <view class="result">检索信息：</view>
+            </view>
+        </view>
+
+    </block>
+
+
+</view>
+
+
+<van-popup show="{{ show }}" position="top" custom-style="height:70%;background:white;" bind:close="onClose"
+    close-on-click-overlay>
+    <view class="bar">
+        <view class="bar-item">
+            <view class="title">地区选择</view>
+            <associate bind:afterInput="afterInput" data-current="region" bind_database="entrance_exam"
+                bind_param="province_name" />
+            <view class="inner-part">
+
+            </view>
+        </view>
+        <view class="bar-item">
+            <view class="title">高校资质</view>
+            <view class="inner-part">
+                <view class="tag {{!searchCondition.Is985?'tag-grey':'tag-red'}}" bindtap="onClickGreyTag" data-c="985">
+                    985
+                </view>
+                <view class="tag {{!searchCondition.Is211?'tag-grey':'tag-blue'}}" bindtap="onClickGreyTag"
+                    data-c="211">211
+                </view>
+                <view class="tag {{!searchCondition.IsDualClass?'tag-grey':'tag-purple'}}" bindtap="onClickGreyTag"
+                    data-c="syl">
+                    双一流</view>
+            </view>
+        </view>
+        <view class="bar-item">
+            <view class="title">学院类别</view>
+            <view class="inner-part">
+
+            </view>
+        </view>
+        <view class="bar-item">
+            <view class="title">考试科目选择</view>
+            <view class="inner-part">
+                <view class="inner-item politic">
+                    <associate bind:afterInput="afterInput" data-current="politic" bind_database="entrance_exam"
+                        bind_param="politics_course" placeholder="(101)思想政治理论" />
+                </view>
+                <view class="inner-item foreign">
+                    <associate bind:afterInput="afterInput" data-current="foreign" bind_database="entrance_exam"
+                        bind_param="foreign_course" placeholder="(201)英语（一）" />
+
+                </view>
+                <view class="inner-item profession1">
+                    <associate bind:afterInput="afterInput" data-current="profession1" bind_database="entrance_exam"
+                        bind_param="major_course_1" placeholder="(302)数学（二）" />
+                </view>
+                <view class="inner-item profession2">
+                    <associate bind:afterInput="afterInput" data-current="profession2" bind_database="entrance_exam"
+                        bind_param="major_course_2" placeholder="(892)电子信息专业综合" />
+                </view>
+            </view>
+        </view>
+        <!-- <view class="bar-item">
+            <view class="title">高校排名约束</view>
+            <view class="inner-part flex">
+
+                <input type="text" placeholder="1" />
+                ——
+                <input type="text" placeholder="100" />
+            </view>
+        </view> -->
+
+    </view>
+    <view class="button-group">
+        <view class="re" bindtap="research">重置</view>
+        <view class="go" bindtap="lookup">检索</view>
+    </view>
+</van-popup>

@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="item" wx:for="{{[data[data.length - 1]]}}" wx:key="year">
+    <view class="top">
+      <view class="top__left">
+        <view class="name">{{item.year}}</view>
+      </view>
+      <view class="grade">总分：{{item.totalScore}} {{item.rank}}</view>
+    </view>
+
+    <view class="middle">
+      <view class="detail">
+        <text class="info tc">
+          {{item.gradeType}}
+        </text>
+      </view>
+    </view>
+
+  </view>
+  <block wx:for="{{data}}" wx:key="year">
+    <view wx:if='{{index != data.length - 1}}' class="item" hover-class="item-hover" hover-stay-time="70" bindtap="toDetail" data-item="{{item}}">
+
+      <view class="top">
+        <view class="top__left">
+          <view class="id">{{item.year}}年 {{item.rank}}</view>
+          <view class="name">{{item.gradeType}}</view>
+        </view>
+        <view class="grade">总分：{{item.totalScore}}</view>
+      </view>
+      <view class="middle">
+        <view class="detail">
+          <view class="detail-item th">
+            <view class="info tl n">
+              项目
+            </view>
+            <view class="info">
+              分数
+            </view>
+            <view class="info">
+              成绩
+            </view>
+            <view class="info">
+              单位
+            </view>
+            <view class="info tr">
+              等级
+            </view>
+          </view>
+          <view class="detail-item" wx:for="{{item.detail}}" wx:key="examName" wx:if="{{item.actualScore}}">
+            <view class="info tl n">
+              {{item.examName}}
+            </view>
+            <view class="info">
+              {{item.score}}
+            </view>
+            <view class="info">
+              {{item.actualScore}}
+            </view>
+            <view class="info">
+              {{item.examunit}}
+            </view>
+            <view class="info tr">
+              {{item.rank}}
+            </view>
+          </view>
+
+        </view>
+
+        <!-- <view class="right">
+          <view class="label">{{item.dlbs}}</view>
+        </view> -->
+      </view>
+
+      <!-- <view class="bottom">
+        点击查看详情
+      </view> -->
+
+    </view>
+  </block>
+
+</view>

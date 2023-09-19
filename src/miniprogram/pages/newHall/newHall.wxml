@@ -1,0 +1,55 @@
+<!--pages/life/index.wxml-->
+<navBar title='生活服务' background='#f6f6f6aa' blur="{{true}}" backgroundColorTop="f6f6f6">
+    <!-- <view slot="left">
+    <navIcon iconName="support" bind:tap="toContact" />
+  </view> -->
+</navBar>
+
+<view class="container">
+
+    <view class="card map">
+        <view class="card-title">学校地图</view>
+        <image bindtap="showMap" class="map-image" src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/QQ20210916-1.jpg" mode="widthFix" />
+    </view>
+
+    <!-- <block wx:if="{{group == '0'}}">
+    <view class="card">
+      <mainMenu data="{{menu}}" num="5" />
+    </view>
+  </block> -->
+
+    <view class="card nopadding menu">
+        <view class="line"></view>
+        <view class="main">
+            <view class="main-item left" bindtap="toHall">
+                <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/Group%2014.png?sign=a293f95b17c1855be79c2855265d8a49&t=1635454891" mode="heightFix"></image>
+                <view class="main-item__text">
+                    <view class="main-item__text__title">全部功能</view>
+                    <view class="main-item__text__info">这里能找到我们的所有功能</view>
+                </view>
+            </view>
+            <view class="main-item right" bindtap="toContact">
+                <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/Group%2022.png?sign=d3639954a7643770511c0f2e4aa9520b&t=1635454656" mode="heightFix"></image>
+                <view class="main-item__text">
+                    <view class="main-item__text__title">联系客服</view>
+                    <view class="main-item__text__info">有建议或疑问都可以联系我们</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="card">
+        <balance refreshing="{{balanceRefresh}}" bind:onClick="getBalance" data="{{balance}}" bindrefresh="onRefreshBalance" />
+
+    </view>
+
+
+    <view class="ad">
+        <view class="item">
+            <image bindtap="toCoupons" src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E5%A4%96%E5%8D%96%E7%BA%A2%E5%8C%85%E5%8D%A1%E7%89%87.png?sign=5b77ea502bc642af4a743cc142246ec2&t=1635459485" style="width: 100%;" mode="widthFix"></image>
+        </view>
+        <view bindtap="toGD" class="item">
+            <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E9%AB%98%E5%BE%B7%E6%89%93%E8%BD%A6%E5%8D%A1%E7%89%87.png?sign=8ecc8b8bfa97d60ebb673f4dccca3a52&t=1641636179" style="width: 100%;" mode="widthFix"></image>
+        </view>
+    </view>
+</view>

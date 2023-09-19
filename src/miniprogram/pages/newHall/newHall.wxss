@@ -1,0 +1,105 @@
+/* pages/life/index.wxss */
+.container::after {
+    content: '';
+    width: 100%;
+    display: block;
+    height: 50px;
+    margin-bottom: 24rpx;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 24rpx;
+    border-radius: 12rpx;
+    box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.04);
+  
+    /* box-shadow: 4rpx 4rpx 12rpx rgba(17/2, 172, 172, 0.16); */
+    /* border: 1rpx solid #eeeeee; */
+  }
+  
+  .card+.card {
+    margin-top: 24rpx;
+  }
+  
+  .map-image {
+    border-radius: 10rpx;
+    width: 100%;
+    vertical-align: middle;
+  }
+  
+  .card-title {
+    margin-bottom: 16rpx;
+    /* margin-top: 12rpx; */
+    font-size: 28rpx;
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  .nopadding {
+    padding: 0;
+  }
+  
+  .menu {
+    position: relative;
+  }
+  
+  .line {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    left: 50%;
+    right: 50%;
+    top: 0;
+    bottom: 0;
+    background-color: #fafafa;
+  }
+  
+  .main {
+    padding: 24rpx 0;
+    width: 100%;
+    display: flex;
+  }
+  
+  
+  .main-item {
+    flex: 1;
+    padding: 0 24rpx;
+  
+    display: flex;
+    align-items: center;
+    gap: 20rpx;
+  }
+  
+  .main-item__text__title {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #555555;
+  }
+  
+  .main-item__text__info {
+    font-size: 20rpx;
+    color: #999999;
+  }
+  
+  .main-item image {
+    min-width: 72rpx;
+    height: 72rpx;
+  }
+  
+  .elec-nobind {
+    color: #0099DB;
+    font-size: 24rpx;
+    text-align: center;
+  }
+  
+  .ad {
+    margin-top: 24rpx;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24rpx;
+  }
+  
+  .ad .item {
+    flex: 1;
+    /* background-color: #000; */
+  }

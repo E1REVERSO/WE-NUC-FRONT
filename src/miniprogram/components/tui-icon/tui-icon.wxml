@@ -1,0 +1,1 @@
+<text class="tui-icon-class tui-icon {{'tui-icon-' + name}}" style="color: {{color || '#999'}};font-size: {{name=='offline-fill'?(size*1.15)+unit:(size + unit)}};font-weight:{{bold ? 'bold' : 'normal'}};margin:{{margin}};{{name=='offline-fill'?'margin-right:-4rpx':''}}" bindtap="handleClick"></text>

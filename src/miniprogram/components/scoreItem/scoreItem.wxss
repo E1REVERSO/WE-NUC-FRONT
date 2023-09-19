@@ -1,0 +1,49 @@
+/* components/scoreItem/scoreItem.wxss */
+.scoreItem {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 12rpx 16rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 6rpx 6rpx rgba(120, 120, 120, 0.1);
+
+  position: relative;
+}
+
+.course-score {
+  position: absolute;
+  right: 16rpx;
+  height: 100%;
+  top: 0;
+  font-size: 40rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.course-score__point {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.course-name {
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.course-info {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+
+.course-info__item {
+  display: flex;
+}
+
+.course-info__item__key {
+  color: #999999;
+  margin-right: 6rpx;
+}
+
+.course-info__item__val {
+  color: #999999;
+}

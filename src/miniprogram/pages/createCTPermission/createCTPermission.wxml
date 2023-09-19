@@ -1,0 +1,31 @@
+<!--miniprogram/pages/createCTPermission/createCTPermission.wxml-->
+<view class="container" wx:if="{{create}}">
+
+  <view class="caption">课程表授权：</view>
+  <view class="gap"></view>
+  <view class="caption">在你发起授权并转发分享后，需要被授权者点击进入才能完成授权；</view>
+  <view class="caption">授权完成后，对方仅能查看你最后一次更新时的课表，如果教务系统有改动，在你更新前对让仍无法查看你在教务系统的最新课表；</view>
+  <view class="caption">你可以随时撤销对任何人的授权，「更多」-「课程表授权」可以管理到你对所有人的授权。</view>
+  <view class="caption">有问题请联系客服。</view>
+
+
+  <button class="btn" bindtap="createShare">立即创建分享</button>
+</view>
+
+<view class="container" wx:else>
+  <view class="caption">课程表授权：</view>
+  <view class="gap"></view>
+  <view class="caption">你打开了一个课程表授权，你可以点击下面的「同意并添加」按钮同意添加，如果你不想同意，无视该申请即可；</view>
+  <view class="caption">你同意后将可以在对方撤销或授权过期前无数次查看对方的课程表；</view>
+  <view class="caption">你仅能查看对方最后一次更新的课程表，如果教务系统有改动，在对方更新前对让仍无法查看对方在教务系统的最新课表；</view>
+  <view class="caption">有问题请联系客服。</view>
+
+  <button class="btn" bindtap="accept">同意并添加</button>
+</view>
+
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onSelect"
+  bind:close="onClose" />
+
+<view class="out">
+  <wxml-to-canvas class="widget" width='595' height="842"></wxml-to-canvas>
+</view>

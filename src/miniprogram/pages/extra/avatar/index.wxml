@@ -1,0 +1,26 @@
+<!--pages/extra/avatar/index.wxml-->
+<view class="container">
+  <view class="avatar-wrap">
+    <view class="avatar-img-wrap">
+
+      <canvas wx:if="{{avatar}}" type="2d" bindtap="storage" id="myCanvas"></canvas>
+      <view wx:else bindtap="getAvatar" class="avatar-img noavatar">点击这里授权头像</view>
+
+    </view>
+  </view>
+
+  <view class="decoration">
+    <view class="title">选择装饰物件</view>
+    <view class="list">
+
+      <block wx:for="{{list}}" wx:key="_id">
+        <view class="item" bindtap="drawDeco" data-url="{{item.url}}">
+          <image class="avatar-item" src="{{avatar}}"></image>
+          <image class="decoration-item" src="{{item.url}}"></image>
+        </view>
+      </block>
+
+    </view>
+    <view class="confirm" wx:if="{{avatar}}" bindtap="storage">确认生成</view>
+  </view>
+</view>

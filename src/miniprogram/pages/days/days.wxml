@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="caption">我的事件</view>
+  <view class="caption">你可以点击修改事件信息 这里的事件会小程序在首页显示</view>
+  <days days="{{userDays}}" type="bar" />
+
+  <view class="caption">云端事件</view>
+  <view class="caption">这里是我们预设好的事件 你可以将它们添加到你的事件里</view>
+  <days days="{{cloudDays}}" type="bar" />
+
+
+  <view class="bottom">
+
+    <view class="button-bottom" hover-class="button-bottom-hover" hover-stay-time="70" bindtap="onClickPlus">
+      <view class="button-bottom__content">
+        <!-- <view>新增事件</view> -->
+        <van-icon color="rgb(71, 90, 192)" size="36rpx" name="plus" />
+      </view>
+    </view>
+
+  </view>
+
+</view>

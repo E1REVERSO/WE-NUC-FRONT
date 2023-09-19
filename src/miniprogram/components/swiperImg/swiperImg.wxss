@@ -1,0 +1,26 @@
+/* components/swiper/swiper.wxss */
+.main {
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.04);
+}
+
+.lbt {
+  height: 172rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.swiper-item {
+  /* background-color: rgb(246, 246, 246); */
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+
+
+.swiper-content {
+  border-radius: 12rpx;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "考试安排",
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index",
+    "examItem": "/components/examItem/examItem"
+  }
+}

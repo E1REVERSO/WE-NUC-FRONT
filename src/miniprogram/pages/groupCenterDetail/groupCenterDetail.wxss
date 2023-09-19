@@ -1,0 +1,85 @@
+.back {
+  position: absolute;
+  left: 8px;
+
+  /* height: 32px; */
+  font-size: 44rpx;
+  color: #fff;
+  /* background-color: #000; */
+  z-index: 999;
+}
+
+.head_bg {
+  padding-bottom: 24rpx;
+  filter: blur(6px);
+  
+  text-align: center;
+}
+
+.noblur {
+  filter: blur(0px);
+}
+
+.item {
+  position: relative;
+  padding-top: 24rpx;
+  margin-left: 32rpx;
+}
+
+.crown {
+  position: absolute;
+  height: 45rpx;
+  width: 50rpx;
+  z-index: 500;
+  margin-top: -24rpx;
+  margin-left: 24rpx;
+}
+
+
+.admins_title {
+  /* margin-top: 15rpx; */
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.lotAvatar {
+  margin-top: 45rpx;
+  display: flex;
+  align-items: center;
+
+  overflow-y: auto;
+}
+
+.indi_avatar {
+  border-radius: 50%;
+  height: 100rpx;
+  width: 100rpx;
+
+}
+
+.avatar {
+  /* margin-left: 58rpx; */
+  height: 175rpx;
+  width: 175rpx;
+  margin: 0 auto;
+}
+
+.admins {
+  text-align: center;
+  padding: 24rpx;
+  margin: 36rpx -24rpx -24rpx -24rpx;
+  background: #ffffff33;
+}
+
+.groupInfo {
+  color: white;
+  margin-top: 12rpx;
+}
+
+.title {
+  font-size: 55rpx;
+}
+
+.doing {
+  width: 100%;
+}

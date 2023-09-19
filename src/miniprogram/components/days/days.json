@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "daysItem": "/components/daysItem/daysItem",
+    "daysItemBar": "/components/daysItemBar/daysItemBar"
+  }
+}

@@ -1,0 +1,11 @@
+/* components/days/days.wxss */
+.main {
+  display: flex;
+  overflow-y: auto;
+  margin: 0 -28rpx;
+}
+
+.white {
+  min-width: 28rpx;
+  height: 20rpx;
+}

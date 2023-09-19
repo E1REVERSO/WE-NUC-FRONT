@@ -1,0 +1,25 @@
+/* pages/hall/hall.wxss */
+.container::after {
+  content: '';
+  width: 100%;
+  display: block;
+  height: 50px;
+  margin-bottom: 24rpx;
+}
+
+.card {
+  background-color: #fff;
+  padding: 8rpx 0 8rpx 0;
+  border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.04);
+
+  margin-top: 12rpx;
+}
+
+.caption {
+  color: rgba(69, 90, 100, 0.6);
+  margin-left: 32rpx;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+}
+

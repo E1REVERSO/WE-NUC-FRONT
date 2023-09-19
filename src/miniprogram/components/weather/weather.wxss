@@ -1,0 +1,6 @@
+/* components/weather/weather.wxss */
+
+.main {
+  font-size: 24rpx;
+  color: #fff;
+}

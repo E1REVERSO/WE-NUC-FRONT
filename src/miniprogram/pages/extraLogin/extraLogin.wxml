@@ -1,0 +1,32 @@
+<!--pages/extraLogin/extraLogin.wxml-->
+<view class="container">
+  <view class="title">额外账户绑定</view>
+  <view class="subTitle">欢迎使用We中北</view>
+  <view class="form">
+    <view class="formItem">
+      <input placeholder="请输入您的账号" type="text" model:value="{{username}}" />
+    </view>
+    <view class="formItem">
+      <input placeholder="请输入您的密码" type="password" model:value="{{password}}" />
+    </view>
+  </view>
+  <view class="btn" bindtap="login">
+    立即登录
+  </view>
+  <view class="read tips">
+    该功能仅供<text style="text-decoration: underline">双学位</text>等用户使用
+  </view>
+  <view class="read tips">
+    每个用户至多登陆2个额外账户
+  </view>
+  <view class="read tips">
+    请不要无故登陆他人账户以免造成不必要的误会
+  </view>
+  <view class="read tips">
+    如需查看他人课程表可使用本程序的「课程表授权」功能
+  </view>
+  <view class="bottom tips">
+    <view>请提前确认账号密码正确</view>
+    <view>不要多次尝试</view>
+  </view>
+</view>

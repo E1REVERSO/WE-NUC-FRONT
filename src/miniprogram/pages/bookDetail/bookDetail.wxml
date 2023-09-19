@@ -1,0 +1,109 @@
+<page-meta page-style="background-color:#f6f6f6" />
+<view class="container_o">
+	<!--header-->
+	<!-- <view class="tui-header-box" style="height:{{height}}px;background:rgba(255,255,255,{{opcity}})">
+		<view class="tui-header" style="padding-top:{{top}}px; opacity:{{opcity}}">图书详情</view>
+		<view class="tui-header-icon" style="margin-top:{{top}}px">
+			<view class="tui-icon-box" style="background-color: rgba(0, 0, 0,{{iconOpcity}})" bindtap="back">
+				<van-icon name="arrow-left" size="16" color="{{opcity >= 1 ? '#000' : '#fff'}}"></van-icon>
+			</view>
+		</view>
+	</view> -->
+	<!--header-->
+
+	<!--banner-->
+	<view class="tui-banner-swiper">
+		<swiper autoplay="{{true}}" interval="5000" duration="150" circular="{{true}}" style="height:{{scrollH}}px" bindchange="bannerChange">
+			<swiper-item data-index="{{index}}" catchtap="previewImage">
+				<image src="{{data.detail.pic||'https://cloud1-0glyq4v2627b233d-1306502030.tcloudbaseapp.com/1647137288098.jpg?sign=644accc459734a8db1520a45b82771b5&t=1647137303'}}" class="tui-slide-image" mode="aspectFill" style="height:{{scrollH}}px" />
+			</swiper-item>
+		</swiper>
+	</view>
+
+	<!--banner-->
+
+	<view class="tui-pro-detail">
+		<view class="tui-box tui-product-title tui-border-radius">
+
+			<view class="tui-pro-titbox">
+				<view class="tui-pro-title">{{data.detail.title || data.title}}</view>
+				<button open-type="share" class="tui-share-btn tui-share-position" bindtap="onShare">
+					<tui-tag type="gray" shape="circleLeft" padding="12rpx 16rpx">
+						<view class="tui-share-box">
+						</view>
+					</tui-tag>
+				</button>
+			</view>
+			<view class="tui-padding" style="margin-top: 12rpx;">
+				<view class="t-2 tui-size tui-gray tui-subtitle" style="font-size: 28rpx;font-weight: bold;color: #333;margin-top: -4rpx;" wx:if="{{data.detail.subtitle}}">{{data.detail.subtitle}}</view>
+				<view wx:if="{{data.detail.author && data.detail.publisher && data.detail.pubdate}}">
+					<view class="t-2 tui-size tui-gray" style="margin-top: 12rpx;" wx:if="{{data.detail.author}}">作者：{{data.detail.author}}</view>
+					<view class="t-2 tui-size tui-gray" wx:if="{{data.detail.publisher}}">出版社：{{data.detail.publisher}}</view>
+					<view class="t-2 tui-size tui-gray" wx:if="{{data.detail.pubdate}}">出版日期：{{data.detail.pubdate}}</view>
+				</view>
+				<view wx:else>
+					<view class="t-2 tui-size tui-gray">{{data.author}}</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="tui-box tui-cmt-box tui-mtop tui-radius-all" wx:if="{{data.detail}}">
+			<view class="tui-list-cell tui-last tui-between">
+				<view class="tui-bold tui-cell-title tui-border-bottom" style="font-size:32rpx">图书属性</view>
+			</view>
+			<view class="tui-content">
+				<view class="desc">
+					<view wx:if="{{data.detail.page}}">页数 : {{data.detail.page}}</view>
+					<view wx:if="{{data.detail.price}}">价格 : {{data.detail.price}}</view>
+					<view wx:if="{{data.detail.binding}}">装帧方式 : {{data.detail.binding}}</view>
+					<view wx:if="{{data.detail.isbn}}">ISBN : {{data.detail.isbn}}</view>
+					<view wx:if="{{data.detail.keyword}}">主题词 : {{data.detail.keyword}}</view>
+					<view wx:if="{{data.detail.edition}}">版次 : {{data.detail.edition}}</view>
+					<view wx:if="{{data.detail.impression}}">印次 : {{data.detail.impression}}</view>
+					<view wx:if="{{data.detail.language}}">正文语种 : {{data.detail.language}}</view>
+					<view wx:if="{{data.detail.format}}">开本 : {{data.detail.format}}</view>
+					<view wx:if="{{data.detail.class}}">中图法分类 : {{data.detail.class}}</view>
+				</view>
+			</view>
+
+		</view>
+		<view class="tui-box tui-cmt-box tui-mtop tui-radius-all" wx:if="{{data.detail.summary}}">
+			<view class="tui-list-cell tui-between">
+				<view class="tui-bold tui-cell-title" style="font-size:32rpx">本书简介</view>
+			</view>
+			<view class="tui-content">
+				<!-- <view class="tui-bold tui-cell-title">幸福的烤肉</view> -->
+				<view class="desc" style="color: #333;padding: 0 0 12rpx 0;">
+					<text>{{data.detail.summary}}</text>
+				</view>
+			</view>
+
+		</view>
+
+		<view class="tui-box tui-cmt-box tui-mtop tui-radius-all">
+			<view class="tui-list-cell tui-between" style="display: flex; align-items: center;">
+				<view class="tui-bold tui-cell-title" style="font-size:32rpx">在馆数据（校图书馆）</view>
+				<view class="tui-bold">共{{data.digit.sum}}本,可借{{data.in_data.length}}本</view>
+			</view>
+			<view class="tui-content" wx:if="{{data.in_data.length > 0}}">
+				<view class="cell" wx:for="{{data.in_data}}" wx:key="index">
+					<view class="item" wx:if="{{item.bz}}">备注：{{item.bz}}</view>
+					<view class="item" wx:if="{{item.dlh}}">登录号：{{item.dlh}}</view>
+					<view class="item" wx:if="{{item.gcd}}">馆藏地：{{item.gcd}}</view>
+					<view class="item" wx:if="{{item.txm}}">条形码：{{item.txm}}</view>
+					<!-- <view class="item" wx:if="{{item.xh}}">{{item.xh}}</view> -->
+					<view class="item" wx:if="{{item.zt}}">状态：{{item.zt}}</view>
+				</view>
+			</view>
+			<view class="tui-content" style="font-size: 28rpx;" wx:else>
+				<view style="padding: 8rpx 0;">
+					暂无书籍在馆
+
+				</view>
+			</view>
+		</view>
+		<noMore text="已经到最底了" backgroundColor="#f7f7f7"></noMore>
+	</view>
+
+
+</view>

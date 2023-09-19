@@ -1,0 +1,101 @@
+<!-- <page-meta page-style="background-color:#3a79fe" /> -->
+<view style="z-index: 99999999;">
+  <navBar background="rgba(58,121,254,{{opacity}})" backgroundColorTop="rgba(58,121,254,{{opacity}})" title="We中北" color="{{'rgba(255,255,255,'+opacity+')'}}"></navBar>
+</view>
+
+<add-tips custom />
+<view></view>
+<view class="container" style="margin-top: -{{naviHeight}}px; z-index: 999;">
+  <view style="height: {{naviHeight}}px;background-color: #3a79fe;content:''"></view>
+  <view class="index">
+    <view class="top">
+      <view class="notice" wx:if="{{notice.show}}">
+
+        <view class="notice__child">
+          <van-notice-bar color="#333333" background="#fff" text="{{notice.content}}" bind:click="toNotice">
+            <view slot="left-icon" class="flex-center">
+              <van-icon class="left-icon" name="volume" size="36rpx" color="#256BFD" />
+            </view>
+            <view slot="right-icon" wx:if="{{notice.bind_text}}" class="flex-center">
+              <van-icon class="right-icon" name="arrow" size="36rpx" color="#256BFD" />
+            </view>
+
+            <!-- <view slot="right-icon" class="flex-center">
+              <van-icon name="arrow" size="36rpx" color="#256BFD" />
+            </view> -->
+          </van-notice-bar>
+        </view>
+      </view>
+
+      <view class="top__content">
+        <view class="head">
+          <image mode="scaleToFill" src="../../static/head.png" />
+        </view>
+
+        <hello info="{{owsData}}" />
+
+        <swiperImg imgs="{{imgs}}" />
+
+      </view>
+
+
+    </view>
+
+    <view class="bottom" style="">
+      <view class="menu">
+        <mainMenu data="{{menu}}" num="5" />
+      </view>
+      <days days="{{days}}" type="block" />
+
+      <view class="title">课程预览</view>
+      <view class="detail">
+        <view class="detail__item">
+          <todayCourse id="todayCourse" />
+        </view>
+        <!-- <view class="detail__item"> -->
+        <!-- <view class="detail__item__item" style="flex: 5;">
+            <balance refresh="{{balanceRefresh}}" bind:onClick="getBalance" data="{{balance}}" />
+          </view> -->
+        <!-- <view class="detail__item__item" style="flex: 4;">
+            <view class="contact__main" bindtap="toContact">
+              <view class="contact__content">
+                <view class="contact__info">有任何问题请联系客服</view>
+                <view class="contact__text">点击联系客服</view>
+              </view>
+            </view>
+          </view> -->
+        <!-- </view> -->
+      </view>
+      <!-- <view class="block">        <leaderboard class="leaderboard" /></view> -->
+
+    </view>
+  </view>
+  <wxs module="cards">
+    var reverse = true;
+    module.exports.getReverse = function () {
+      reverse = !reverse;
+      return reverse
+    }
+  </wxs>
+  <!-- <block wx:for="{{datas}}" wx:key="index" wx:for-item="item">
+    <block wx:for="{{[cards.getReverse()]}}" wx:for-item="isReverse" wx:key="index">
+      <card-group title="{{item.title}}" subTitle="{{item.subTitle}}" reverse="{{isReverse}}">
+        <view slot="big">
+          <card size="big" data="{{item.children[0]}}" imageReverse="{{isReverse}}" />
+        </view>
+        <view slot="small">
+          <card size="small" data="{{item.children[1]}}" imageReverse="{{isReverse}}" />
+          <card size="small" data="{{item.children[2]}}" imageReverse="{{isReverse}}" />
+        </view>
+      </card-group>
+
+    </block>
+
+  </block> -->
+
+
+
+
+  <!-- <tui-footer fixed="{{false}}" copyright="Copyright © 2021 清曙科技 All Rights Reserved." navigate="{{navigate}}" tui-footer-class="tui-custom"></tui-footer> -->
+
+</view>

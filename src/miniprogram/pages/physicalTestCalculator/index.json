@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "体测计算器",
+  "usingComponents": {
+    "hiveBtn": "/components/hiveBtn/hiveBtn"
+  }
+}

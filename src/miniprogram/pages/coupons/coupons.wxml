@@ -1,0 +1,124 @@
+<!--miniprogram/index/pages/coupons/coupons.wxml-->
+<view class="container">
+
+
+  <view class="caption">福利中心</view>
+  <view class="gap"></view>
+  <view class="caption">饿了么外卖红包</view>
+  <view class="gap"></view>
+
+  <view class="item" bindtap="eleme1">
+    <view class="image">
+      <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E9%A5%BF%E4%BA%86%E4%B9%88.png?sign=29f596f85b8d27cbc7e72388e5540e07&t=1635460256"></image>
+    </view>
+    <view class="text">
+      <view class="main">饿了么天天领红包 <text class="label">HOT</text> <text class="label">1</text></view>
+      <view class="coupon">
+        <view class="coupon-text">66元<text class="before">最高</text></view>
+        <!-- <view class="ad flex-center">火爆领取中!</view> -->
+      </view>
+    </view>
+    <view class="btn flex-center">领取红包</view>
+  </view>
+
+  <!-- <view class="item" bindtap="eleme2">
+    <view class="image">
+      <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E9%A5%BF%E4%BA%86%E4%B9%88.png?sign=29f596f85b8d27cbc7e72388e5540e07&t=1635460256"></image>
+    </view>
+    <view class="text">
+      <view class="main">饿了么天天领红包 <text class="label">2</text></view>
+      <view class="coupon">
+        <view class="coupon-text">66元</view>
+        <view class="ad flex-center">经典上线</view>
+      </view>
+    </view>
+    <view class="btn flex-center">领取红包</view>
+  </view> -->
+
+  <view class="item" bindtap="eleme3">
+    <view class="image">
+      <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E9%A5%BF%E4%BA%86%E4%B9%88.png?sign=29f596f85b8d27cbc7e72388e5540e07&t=1635460256"></image>
+    </view>
+    <view class="text">
+      <view class="main">饿了么幸运红包</view>
+      <view class="coupon">
+        <view class="coupon-text">20元<text class="before">最高</text></view>
+        <view class="ad flex-center">低门槛满减红包</view>
+      </view>
+    </view>
+    <view class="btn flex-center">领取红包</view>
+  </view>
+
+
+  <view class="gap"></view>
+  <view class="gap"></view>
+  <view class="caption">美团外卖红包</view>
+  <view class="gap"></view>
+
+  <view class="item" bindtap="meituan1">
+    <view class="image">
+      <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E7%BE%8E%E5%9B%A2%E5%A4%96%E5%8D%96.png?sign=029bcdd332841c81e3ece6e2e816bca9&t=1635460244"></image>
+    </view>
+    <view class="text">
+      <view class="main">美团外卖天天领红包</view>
+      <view class="coupon">
+        <view class="coupon-text">56元<text class="before">最高</text></view>
+        <view class="ad flex-center">低门槛满减红包</view>
+      </view>
+    </view>
+    <view class="btn flex-center">立即领取</view>
+  </view>
+
+  <!-- <view class="item" bindtap="meituan2">
+    <view class="image">
+      <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E7%BE%8E%E5%9B%A2%E5%A4%96%E5%8D%96.png?sign=029bcdd332841c81e3ece6e2e816bca9&t=1635460244"></image>
+    </view>
+    <view class="text">
+      <view class="main">美团外卖全民特惠</view>
+      <view class="coupon">
+        <view class="coupon-text">15元<text class="before">最高</text></view>
+      </view>
+    </view>
+    <view class="btn flex-center">立即领取</view>
+  </view> -->
+  <view class="gap"></view>
+  <view class="gap"></view>
+  <view class="caption">更多福利</view>
+  <view class="gap"></view>
+  <view class="item" bindtap="gaode">
+    <view class="image">
+      <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%403x.png?sign=474b3c581d4e6848527b425e922f5b71&t=1639469141"></image>
+    </view>
+    <view class="text">
+      <view class="main">高德打车红包</view>
+      <view class="coupon">
+        <view class="coupon-text">100元<text class="before">红包组合</text></view>
+        <view class="ad flex-center">一人一次</view>
+      </view>
+    </view>
+    <view class="btn flex-center">领取红包</view>
+  </view>
+
+  <view class="item" bindtap="taopiaopiao">
+    <view class="image">
+      <image src="https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E6%B7%98%E7%A5%A8%E7%A5%A8.png?sign=d0650df62e6f66dc099c6da34c57b864&t=1639468994"></image>
+    </view>
+    <view class="text">
+      <view class="main">淘票票电影红包</view>
+      <view class="coupon">
+        <view class="coupon-text">16元<text class="before">最高</text></view>
+        <view class="ad flex-center">全新上线</view>
+      </view>
+    </view>
+    <view class="btn flex-center">领取红包</view>
+  </view>
+
+  <!-- https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/static/%E6%B7%98%E7%A5%A8%E7%A5%A8.png?sign=d0650df62e6f66dc099c6da34c57b864&t=1639468994-->
+
+  <view class="secondary-title-container">
+    <!-- <view class="secondary-title">美团外卖红包</view> -->
+    <view class="secondary-secondary center">我们将会发掘更多福利</view>
+  </view>
+
+
+</view>

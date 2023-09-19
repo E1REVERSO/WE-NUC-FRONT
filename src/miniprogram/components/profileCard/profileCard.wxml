@@ -1,0 +1,31 @@
+<view class="profilecard user" bindtap="onClick">
+	<image class="xs" mode="heightFix" src="/static/star.png"></image>
+	<view class="content">
+		<view class="avatar">
+			<open-data wx:if="{{!loginData && !loginData.avatarUrl}}" class="image" type="userAvatarUrl"></open-data>
+			<image wx:else mode="widthFix" src="{{loginData.avatarUrl}}"></image>
+		</view>
+		<view class="userInfo full" wx:if="{{userinfo}}">
+			<view class="nick">
+				{{(login.username == "20210000" || login.username=="20200000") ? '系统账号' : userinfo.name}}
+			</view>
+			<view class="account">
+				{{login.username}}
+			</view>
+			<!-- <view class="academy">
+			{{userinfo.discipline}}
+		</view> -->
+		</view>
+		<view class="userInfo full" wx:else>
+			<view>
+				<view class="beforelogin">
+					未登陆，登陆后可使用全部功能
+				</view>
+				<view class="clicklogin">
+					点击这里登陆
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>

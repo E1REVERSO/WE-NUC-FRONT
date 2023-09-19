@@ -1,0 +1,66 @@
+page {
+  --sidebar-selected-border-color: #5878DA;
+}
+
+.phoneList {
+  display: flex;
+}
+
+.search {
+  border-bottom: 1rpx solid #99999915;
+}
+
+.left {
+  width: 80px;
+  /* flex: 1; */
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.titles {
+  display: flex;
+  align-items: flex-end;
+}
+
+.tag {
+  font-size: 20rpx;
+  border: 1rpx solid #333333;
+  margin-left: 4rpx;
+  padding: 2rpx 4rpx;
+}
+
+.item {
+  font-size: 26rpx;
+  color: #333333;
+  padding: 12rpx 32rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #99999918;
+  display: flex;
+}
+
+.hover-item {
+  background-color: rgba(230, 230, 230, 0.342);
+}
+
+.phone-icon {
+  right: 56rpx;
+  margin: auto 24rpx auto auto;
+}
+
+.address {
+  font-size: 22rpx;
+}
+
+.phone {
+  font-size: 22rpx;
+}
+
+.right {
+  /* flex: 2; */
+  width: 100%;
+  background-color: #fff;
+}

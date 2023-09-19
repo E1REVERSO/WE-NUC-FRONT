@@ -1,0 +1,82 @@
+<!--miniprogram/pages/pointCalc/pointCalc.wxml-->
+<page-meta></page-meta>
+<wxs module="m1">
+	function getBX(jd) {
+		if (!jd) return;
+		for (var i = 0; i < jd.length; i++) {
+			if (jd[i].kcxz == "必修") {
+				return jd[i].jd
+			}
+		}
+	}
+	module.exports.getBX = getBX
+</wxs>
+
+<view class="background">
+
+	<view class="text-group">
+		<view class="text-main">
+			<view class="title">
+				绩点查询
+			</view>
+			<view class="subTitle">
+				数据仅供参考，实际请以教务处为准。
+			</view>
+			<view class="subTitle">
+				在此仅显示全部学期绩点，单学期绩点信息请移步至成绩查询
+			</view>
+		</view>
+	</view>
+
+	<view class="out-bar">
+		<view class="inner"></view>
+	</view>
+	<!-- <view class="ticket" style="top: {{height?ticket.top:'-500'}}px;" bindtap="onClickTicket"> -->
+	<view class="ticket-top" style="{{heightF?'':'background: transparent;'}}" />
+
+	<view class="ticket-body" style="{{height?'top:'+(ticket.top)+'px':''}}">
+		<view class="content">
+			<view class="info">
+				<view class="infoItem">
+					<view class="infoItemKey">
+						姓名
+					</view>
+					<view class="infoItemVal">
+						{{userinfo.name}}
+					</view>
+				</view>
+				<view class="infoItem">
+					<view class="infoItemKey">
+						查询时间
+					</view>
+					<view class="infoItemVal">
+						{{time}}
+					</view>
+				</view>
+				<view class="infoItem">
+					<view class="infoItemKey">
+						学期范围
+					</view>
+					<view class="infoItemVal" wx:if="{{userinfo.grade}}">
+						{{userinfo.grade}}第1学期-至今
+					</view>
+				</view>
+			</view>
+
+			<view class=" result">
+				<block wx:for="{{points}}" wx:key="index" wx:if="{{item.jd}}">
+
+					<view class="infoItemKey">
+						{{item.kcxz}}绩点
+					</view>
+					<view class="points">
+						-{{item.jd}}-
+					</view>
+				</block>
+
+			</view>
+		</view>
+
+	</view>
+	<!-- </view> -->
+</view>

@@ -1,0 +1,56 @@
+<wxs module="m1">
+  module.exports.getPercent = function (value) {
+    var v = value.slice(0, -1)
+    if (v > 100) {
+      v = 100
+    }
+    return v
+  }
+  module.exports.getStatusText = function (value) {
+    value = value.split('%')[0]
+    if (value < 60) {
+      return "空闲"
+    } else if (value < 80) {
+      return '拥挤'
+    } else if(value<100){
+      return '爆满'
+    }else{
+      return '过载'
+    }
+  }
+  module.exports.getStatus = function (value) {
+    value = value.split('%')[0]
+    if (value < 40) {
+      return "#2BDC70"
+    } else if (value < 75) {
+      return '#FFCD43'
+    } else if (value <= 100) {
+      return '#DD4F42'
+    } else {
+      return {
+        '0%': '#DD4F42',
+        '100%': '#7232DD',
+      }
+    }
+  }
+</wxs>
+<view class="container">
+  <view class="caption">数据来自中北大学大数据平台</view>
+  <view class="caption">数据每分钟更新一次</view>
+  <view class="gap"></view>
+  <view class="caption">更新时间：{{time}}</view>
+  <view class="gap"></view>
+  <view class="staffList">
+    <block wx:for="{{res}}" wx:key="name">
+      <view class="part">
+        <view class="name">{{item.name}}</view>
+        <view class="signature">就餐人数：{{item.info.num}}</view>
+        <view class="signature" style="color:{{m1.getStatus(item.info.crowdedness)}}">{{m1.getStatusText(item.info.crowdedness)}}</view>
+        <view class="circle">
+          <van-circle class="van" value="{{m1.getPercent(item.info.crowdedness)}}" layer-color="#eeeeee" color="{{m1.getStatus(item.info.crowdedness)}}" text="{{item.info.crowdedness}}" />
+        </view>
+
+      </view>
+    </block>
+  </view>
+</view>

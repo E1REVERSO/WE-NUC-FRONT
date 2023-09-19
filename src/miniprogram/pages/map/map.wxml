@@ -1,0 +1,5 @@
+<view class="container">
+  <view class="card map">
+    <image bindtap="showMap" class="map-image" src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/QQ20210916-1.jpg" style="opacity: 0.8;" mode="widthFix" />
+  </view>
+</view>

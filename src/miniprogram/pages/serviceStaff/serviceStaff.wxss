@@ -1,0 +1,6 @@
+/* pages/serviceStaff/serviceStaff.wxss */
+.staffList {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}

@@ -1,0 +1,169 @@
+<!--pages/classTable/classTable.wxml-->
+<navBar title='课程表' background='#f6f6f6aa' blur="{{true}}" backgroundColorTop="f6f6f6">
+  <view slot="left" class="left-icons">
+    <!-- <navIcon iconName="cog" bind:tap="showSettings" />
+    <navIcon iconName="cog" bind:tap="showSettings" /> -->
+    <view class="switchWeeks" hover-class="switchWeeks-hover" hover-stay-time="70" bindtap="switchShow">
+      第 {{choosed}} 周
+    </view>
+
+    <view class="left-icons__item">
+      <!-- <navIcon iconName="cog" bind:tap="showSettings" /> -->
+      <navIcon iconName="setting-o" prefix="van-icon" bind:tap="showSettings" />
+
+    </view>
+    <view class="left-icons__item">
+      <!-- <navIcon iconName="plus" bind:tap="showAddCourse" /> -->
+      <navIcon iconName="plus" prefix="van-icon" bind:tap="showAddCourse" />
+    </view>
+
+  </view>
+</navBar>
+
+<view class="container">
+
+  <view class="head" style="top: {{naviHeight}}px;">
+    <view class="switch">
+      <van-tabs active="{{ switchActive }}" bind:change="onChange" color="#3978FE">
+        <van-tab title="我的课表"></van-tab>
+        <van-tab title="Ta的课表"></van-tab>
+        <van-tab bindtap="onShowOther" title="其他课程"></van-tab>
+        <van-tab title="授权"></van-tab>
+        <van-tab wx:if="{{switchActive == 4}}" title="他人课程"></van-tab>
+      </van-tabs>
+    </view>
+  </view>
+
+  <view style="margin-top: {{top}}px;">
+    <classTable bind:refresh="setClass" choosed="{{choosed}}" data="{{ownData}}" showNotThis="{{showNotThis}}" showWeekEnd="{{showWeekEnd}}" show="{{switchActive == 0}}" wx:if="{{switchActive == 0}}" />
+
+    <block wx:if="{{switchActive == 1}}">
+      <block wx:if="{{important}}">
+        <classTable bind:refresh="setClass" choosed="{{choosed}}" data="{{importantData}}" showNotThis="{{showNotThis}}" showWeekEnd="{{showWeekEnd}}" />
+      </block>
+      <block wx:else>
+        <van-empty description="你还没有设置Ta的课表哦~" />
+      </block>
+    </block>
+
+    <minorCourse data="{{minorClass}}" wx:if="{{switchActive == 2}}" />
+    <authClassTable id='authClass' bindchoose="showOtherClassTable" bindchangeImportant="changeImportant" wx:if="{{switchActive == 3}}" />
+    <classTable bind:refresh="setClass" choosed="{{choosed}}" data="{{otherData}}" showNotThis="{{showNotThis}}" showWeekEnd="{{showWeekEnd}}" wx:if="{{switchActive == 4}}" />
+    <view class="desc" wx:if="{{switchActive == 0}}">
+      <view>提示 : 课程表并非与教务系统实时同步，需要下拉刷新重新获取。有右上角标识的为自定义课程，有横线标识的为重叠课程</view>
+    </view>
+
+  </view>
+</view>
+
+<van-popup show="{{ switchShow }}" position="bottom" closeable bind:close="onClose">
+  <view class="switches">
+    <view class="caption">选择查看对应周次课表</view>
+    <view class="content">
+
+      <hiveBtn type="single" bind:onChoose="chooseWeek" active="{{[choosed]}}" data="{{columns}}" highLightIndex="{{thisWeek-1}}" canCancel="{{false}}"></hiveBtn>
+
+      <!-- <block wx:for="{{columns}}" wx:key="*this">
+        <view>
+          <view class="weeks__item {{thisWeek == item?'current':''}} {{item == choosed?'choosed':''}}"
+            bindtap="chooseWeek" data-weeks="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </block> -->
+    </view>
+  </view>
+</van-popup>
+
+<van-popup show="{{ settingsShow }}" position="bottom" closeable bind:close="onClose">
+  <view class="switches">
+    <view class="caption">课程表设置</view>
+    <view class="content">
+      <view class="content__item">
+        <switchBlock name="课程推送" bind:onClick="switchPush" open="{{pushClass}}" desc="上课前进行推送" icon="send" />
+      </view>
+      <view class="content__item">
+        <switchBlock name="显示非本周" bind:onClick="showNotThis" open="{{showNotThis}}" desc="展示非本周课程" icon="filter" />
+      </view>
+      <view class="content__item">
+        <switchBlock name="显示周末" bind:onClick="showWeekEnd" open="{{showWeekEnd}}" desc="展示周末，周末有课强制展示" icon="inbox" />
+      </view>
+    </view>
+    <block wx:if="{{pushClass}}">
+      <view class="caption">推送时间设置（提前 * 分钟）</view>
+      <radioSwitch bind:onChoose="chooseTime" currentName="{{pushInfo.before}}" items="{{beforeArr}}" />
+      <view class="caption red">在关注服务号「清曙微校园」后才能收到推送～</view>
+    </block>
+    <view class="gap"></view>
+    <block wx:if="{{extraSet.length}}">
+      <view class="caption">多账号显示</view>
+      <view class="content">
+        <block wx:for="{{extraSet}}" wx:key="index">
+          <view class="content__item">
+            <switchBlock name="{{item.username}}" bind:onClick="showExtra" desc="点击即可关闭该账户的课程表显示" open="{{item.show}}" icon="id-card" />
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</van-popup>
+
+<van-popup show="{{ addCourseShow }}" position="bottom" closeable bind:close="onClose">
+  <view class="switches">
+    <view class="add-title">
+      <view class="caption">添加课程</view>
+      <view class="add-course" hover-class="add-course-hover" bindtap="addCourse" hover-stay-time="70">
+        确认添加
+      </view>
+    </view>
+    <view class="gap"></view>
+    <view class="caption">基本信息</view>
+    <view class="content">
+
+      <input class="input {{kcmcIpt?'active':''}}" model:value="{{kcmc}}" bindinput="addInput" placeholder="课程名称（必填）" bindkeyboardheightchange="inputFocus" data-name="kcmc" type="text" />
+
+      <input class="input {{cdmcIpt?'active':''}}" model:value="{{cdmc}}" bindinput="addInput" placeholder="上课地点" bindkeyboardheightchange="inputFocus" data-name="cdmc" type="text" />
+
+      <input class="input {{xmIpt?'active':''}}" model:value="{{xm}}" bindinput="addInput" placeholder="课程教师" bindkeyboardheightchange="inputFocus" data-name="xm" type="text" />
+
+    </view>
+    <view class="caption">选择星期几</view>
+    <view class="content">
+
+      <hiveBtn type="single" id="dayChooser" bind:onChoose="onChooseDay" data="{{day}}"></hiveBtn>
+
+    </view>
+    <view class="caption">选择上课时间(第 * 小节)</view>
+    <view class="content">
+
+      <hiveBtn type="multi-conti" id="timeChooser" bind:onChoose="onChooseTime" data="{{sections}}"></hiveBtn>
+
+    </view>
+    <view class="add-title">
+      <view class="caption">选择上课周次</view>
+      <view class="add-btn">
+        <view class="add-btn__item" bindtap="quickChoose" data-name='clear'>清空</view>
+        <view class="add-btn__item" bindtap="quickChoose" data-name='all'>全选</view>
+        <view class="add-btn__item" bindtap="quickChoose" data-name='odd'>单周</view>
+        <view class="add-btn__item" bindtap="quickChoose" data-name='even'>双周</view>
+      </view>
+    </view>
+    <view class="content">
+
+      <hiveBtn type="multi" id="weekChooser" bind:onChoose="onChooseWeeks" data="{{columns}}"></hiveBtn>
+
+    </view>
+  </view>
+</van-popup>
+
+<van-dialog use-slot title="温馨提示" show="{{showDialog}}" bind:close="onCloseDialog" confirm-button-color="#3A79fe" confirmButtonText="知道了">
+  <view class="dialog">
+    <view>课程表并非与教务系统中实际课表实时同步，只有下拉刷新后才会自动获取当时的课表</view>
+    <view>为防止某些课程安排的比较迟，程序会在每周首次使用程序时自动同步一次课表。</view>
+    <view>每次课表变更后请登录教务系统检查课程表是否正常无误。</view>
+    <view style="display: flex;">有问题请及时
+      <view style="text-decoration: underline;color:#3675ee" catchtap="toServerStaff">联系客服</view>
+    </view>
+  </view>
+
+</van-dialog>

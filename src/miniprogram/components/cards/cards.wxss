@@ -1,0 +1,140 @@
+.card {
+    background-color: #fff;
+    border-radius: 20rpx;
+    box-shadow: 0rpx 0rpx 12rpx rgba(153, 153, 153, 0.158);
+    box-sizing: border-box;
+    padding: 20rpx 12rpx 12rpx 12rpx;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.tag .text {
+    border-radius: 8rpx;
+    background-color: #00c55fe0;
+    padding: 4rpx 8rpx;
+}
+
+.title-part .tag {
+    font-size: 22rpx;
+
+
+    display: flex;
+    align-items: center;
+}
+
+.title-part {
+    z-index: 2;
+    box-sizing: content-box;
+    padding: 0 12rpx;
+}
+
+.card .title {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: bold;
+    padding: 4rpx 0;
+}
+
+
+.functions {
+    background-color: #fff;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.hover-function {
+    background-color: #f6f6f69c;
+}
+
+.function {
+    padding: 18rpx 16rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1;
+    position: relative;
+    gap: 12rpx;
+}
+
+.function .icon {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.function .title {
+    font-weight: normal;
+    font-size: 26rpx;
+    max-width: 168rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card .subTitle {
+    font-size: 26rpx;
+    font-weight: normal;
+}
+
+.box {
+    display: flex;
+    gap: 8rpx;
+}
+
+.card .tag {
+    color: #fff;
+}
+
+.card .content {
+    font-size: 26rpx;
+    color: #444;
+    padding: 0 12rpx;
+}
+
+.broadcast {
+    padding: 24rpx;
+}
+
+.broadcast .title {
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.broadcast .content {
+    margin: 12rpx 12rpx 0 12rpx;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+.image-box {
+    height: 100%;
+    width: 38.2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-box .image {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8rpx;
+}
+
+.vote-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    background-image: linear-gradient(to bottom, #ffffff 25%, #ffffff 60%, #ffffff00 100%);
+    z-index: 0;
+}
+
+.vote {
+    z-index: 1;
+}

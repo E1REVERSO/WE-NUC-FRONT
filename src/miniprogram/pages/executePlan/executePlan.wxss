@@ -1,0 +1,145 @@
+.cell {
+    padding: 20rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #eee;
+    box-sizing: border-box;
+    /* border-radius: 12rpx; */
+    /* box-shadow: 4rpx 4rpx 12rpx rgba(226, 226, 226, 0.103); */
+}
+
+.desc {
+    font-size: 24rpx;
+    color: #666;
+    margin-top: 24rpx;
+}
+
+.it {
+    font-size: 28rpx;
+    color: #333;
+    padding: 8rpx 0;
+}
+
+.it_group {
+    padding: 20rpx 28rpx;
+}
+
+.none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12rpx;
+    background-color: #fff;
+    padding: 24rpx 0;
+}
+
+.none .text {
+    font-size: 28rpx;
+    color: #777;
+}
+
+.cell .title {
+    color: #333;
+    font-size: 28rpx;
+    /* flex-grow: 1; */
+    max-width: 420rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+}
+
+.tui-right {
+    background-color: #f6f6f6;
+    font-size: 28rpx;
+    padding: 8rpx 24rpx;
+}
+
+.sticky-item {
+    width: 100%;
+    height: 104rpx;
+    padding: 20rpx 30rpx;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.date {
+    height: 54rpx;
+    font-size: 28rpx;
+    background-color: #fff;
+    color: #333;
+    padding: 0 28rpx;
+    border-radius: 25rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* box-shadow: 0 0 1rpx #7A7A7A; */
+}
+
+.date::after {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    border: 1rpx solid #eaeef1;
+    border-radius: 60rpx;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    left: 0;
+    top: 0;
+}
+
+.amount {
+    text-align: right;
+    color: #7A7A7A;
+    font-size: 24rpx;
+}
+
+/* .desc {
+    color: #999;
+    font-size: 24rpx;
+    padding: 24rpx 12rpx;
+} */
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 12rpx;
+    flex-wrap: wrap;
+    line-height: 1;
+}
+
+.xf {
+    color: #666;
+    font-size: 24rpx;
+}
+
+/* .group {
+    margin-top: 24rpx;
+} */
+
+.right {
+    margin: 0 0 0 auto;
+    display: flex;
+    gap: 12rpx;
+    align-items: center;
+    line-height: 1;
+}
+
+.cell_box {
+    margin: 0 28rpx;
+}
+
+.container {
+    margin: 0;
+}
+
+.hover-cell {
+    background-color: rgba(241, 241, 241, 0.603);
+}

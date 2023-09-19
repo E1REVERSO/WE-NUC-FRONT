@@ -1,0 +1,25 @@
+<!--components/examItem/examItem.wxml-->
+<view class="main" hover-class="main-hover" hover-stay-time="70" bindtap="setDays">
+
+  <view class="top">
+    <view class="top__left">
+      <view class="id">{{info.kch}}</view>
+      <view class="name">{{info.kcmc}}</view>
+    </view>
+    <view class="method">考试方式：{{info.ksfs}}</view>
+  </view>
+  <view class="middle">
+    <view class="detail">
+
+      <view class="academy">开课学院：{{info.kkxy}}</view>
+      <view class="time">考试时间：{{info.kssj}}</view>
+      <view class="place">考试场地：{{info.cdmc}}</view>
+
+    </view>
+
+  </view>
+  <view class="bottom">
+    <view class="bottom__left">{{info.ksmc}}</view>
+    <view class="bottom__right">点击添加到倒数日</view>
+  </view>
+</view>

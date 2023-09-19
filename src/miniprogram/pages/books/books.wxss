@@ -1,0 +1,11 @@
+.list {}
+
+.head {
+    position: fixed;
+    left: 0;
+    top: -5rpx;
+    right: 0;
+    z-index: 9999;
+    border-radius: 0 0 32rpx 32rpx;
+    overflow: hidden;
+}

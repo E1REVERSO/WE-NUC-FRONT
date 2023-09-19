@@ -1,0 +1,22 @@
+<!--miniprogram/pages/updateLog/updateLog.wxml-->
+<view class="container">
+  <block wx:for="{{data}}" wx:key="version">
+    <view class="header">
+      <view class="header__icon"></view>
+      <view class="header__text">
+        <view class="header__ver">{{item.version}}</view>
+        <view class="header__date">{{item.date}}</view>
+      </view>
+    </view>
+    <view class="content-box">
+      <block wx:for="{{item.info}}" wx:key="text">
+        <view class="content-item">
+          <view class="content-item__type">
+            <view wx:if="{{item.icon}}">{{item.icon}}</view>
+          </view>
+          <view class="content-item__text">{{item.text}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

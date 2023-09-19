@@ -1,0 +1,10 @@
+<!--pages/serviceStaff/serviceStaff.wxml-->
+<view class="container">
+
+  <view class="staffList">
+    <block wx:for="{{data}}" wx:key="_id">
+      <serviceItem bindtap="showImg" data-index="{{index}}" info="{{item}}" />
+    </block>
+  </view>
+
+</view>

@@ -1,0 +1,83 @@
+<!--pages/extra/physicalTestCalculator/index.wxml-->
+<view class="container">
+  <view class="grade" wx:if="{{result.performance.bmi || result.aggregate.score > 0}}">
+    <view class="grade-item" wx:if="{{result.performance.bmi}}">
+      <view class="grade-item-val">
+        {{result.performance.bmi}} <text class="grade-item-val-label">{{result.grade.bmi}}</text>
+      </view>
+      <view class="grade-item-key">
+        BMI
+      </view>
+    </view>
+    <view class="grade-item" wx:if="{{result.aggregate.score > 0}}">
+      <view class="grade-item-val">
+        {{result.aggregate.score}} <text class="grade-item-val-label">{{result.aggregate.grade}}</text>
+      </view>
+      <view class="grade-item-key">
+        总分
+      </view>
+    </view>
+  </view>
+  <view class="input-group">
+    <view class="item">
+      <view class="name">性别</view>
+      <view class="input iright">
+        <hiveBtn type="single" bind:onChoose="onChooseGender" data="{{['男生','女生']}}" active="{{[_gender]}}" canCancel="{{false}}" />
+      </view>
+      <!-- <view class="unit">{{item.unit}}</view> -->
+    </view>
+    <view class="item">
+      <view class="name">年级</view>
+      <view class="input iright">
+        <hiveBtn type="single" bind:onChoose="onChooseGrade" data="{{['大一','大二','大三','大四']}}" active="{{[_grade]}}" canCancel="{{false}}" />
+      </view>
+    </view>
+  </view>
+  <view class="input-group">
+    <block wx:for="{{inputs}}" wx:key="key">
+      <view class="item" wx:if="{{!item.gender || item.gender == gender}}">
+        <view class="name">{{item.name}}</view>
+        <input class="input" type="digit" value="{{performances[item.key] == '0.00001' ? '0': performances[item.key]}}" placeholder="输入{{item.name}}数值" placeholder-style="color: #bbb" data-name="{{item.key}}" bindinput="onInput" />
+        <view class="unit">
+          {{item.unit}}
+          <view class="info" wx:if="{{result.rawScore[item.key] != undefined}}">
+            {{result.rawScore[item.key]}}分
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </view>
+
+  <view class="btns">
+    <view bindtap="clear" class="card">
+      <view class="confirm">
+        清空数据
+      </view>
+    </view>
+    <!-- <view bindtap="store" class="card">
+      <view class="confirm">
+        覆盖保存
+      </view>
+    </view> -->
+  </view>
+
+  <view class="gap"></view>
+  <view class="gap"></view>
+  <view class="gap"></view>
+  <view class="caption blue bold" bindtap="showDoc" data-file="https://636c-cloud1-0glyq4v2627b233d-1306502030.tcb.qcloud.la/static/%E3%80%8A%E4%BD%93%E6%B5%8B%E3%80%8B%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86(2014%E5%B9%B4%E4%BF%AE%E8%AE%A2)%20(1).pdf?sign=7717b8bb68e74778888c29c5cf260508&t=1634421568">
+    点击这里查看评分标准
+  </view>
+  <view class="gap"></view>
+  <view class="caption">
+    ① 计算依据：
+    <view bindtap="showDoc" data-file="https://636c-cloud1-0glyq4v2627b233d-1306502030.tcb.qcloud.la/static/%E8%AF%84%E5%88%86%E8%A1%A8.pdf?sign=c2514ce8580770d3542df365773f4167&t=1634421633">- 2014年《国家学生体质健康标准》单项指标评分表；</view>
+    <view bindtap="showDoc" data-file="https://636c-cloud1-0glyq4v2627b233d-1306502030.tcb.qcloud.la/static/%E5%8A%A0%E5%88%86.pdf?sign=38cf26c736a7f3c9f07bf2d13517a4ef&t=1634421615">- 2014年《国家学生体质健康标准》加分指标评分表；</view>
+    <view bindtap="showDoc" data-file="https://636c-cloud1-0glyq4v2627b233d-1306502030.tcb.qcloud.la/static/%E4%BD%93%E6%B5%8B%E6%95%99%E8%82%B2%E9%83%A8.pdf?sign=a447a56ee97f98ef691677c928ab310e&t=1634421587">- 《国家学生体质健康标准（2014年修订）》</view>
+    以上文件来自中华人民共和国教育部官网和学生体质健康网
+
+  </view>
+  <view class="caption">
+    ② 本功能仅作参考，不排除程序编写产生偏差的可能，有问题请联系客服
+  </view>
+</view>

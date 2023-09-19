@@ -1,0 +1,67 @@
+<!--components/ownClassTable/ownClassTable.wxml-->
+
+<view class="container">
+  <block wx:if="{{reverseTable}}">
+
+
+    <view class="class-table">
+      <view class="title">{{username}} - 无课表</view>
+      <view class="head">
+        <view class="left flex-center">✌️</view>
+
+        <block wx:for="{{['一', '二', '三', '四', '五']}}" wx:key="*this">
+          <view class="cell flex-center">
+            <view>
+              <view class="day">周{{item}}</view>
+              <!-- <view class="date">{{calendar[index]}}</view> -->
+            </view>
+
+          </view>
+        </block>
+
+      </view>
+      <view class="body">
+        <view class="left">
+          <view class="left__column">
+            <view class="section flex-center" wx:for="{{11}}" wx:key="*this">
+              <view class="section__item flex-center">
+                <view>
+                  <view class="section__name">{{item + 1}}</view>
+                  <view class="section__time">{{time[item + 1][0]}}</view>
+                  <view class="section__time">{{time[item + 1][1]}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="column" wx:for="{{ 5 }}" wx:key="*this" wx:for-item="xq">
+          <view wx:for="{{ 5 }}" class="cell flex-center" wx:for-item="jc" style="flex: {{jc == '4'?'3':'2'}};"
+            wx:key="*this">
+            <view class="cell__content">
+              <block wx:for="{{ reverseTable[xq][jc] }}" wx:key="jcdm">
+                <view class="text" wx:if="{{item == '1-20'}}">全学期</view>
+                <view class="text" wx:else>{{item}}周</view>
+              </block>
+              <view class="nc">'无课'</view>
+            </view>
+
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class="gap"></view>
+    <view class="caption">无课表意思是在某一节课的时间没有课的周，例如周一第1-2节在1-8周无课；</view>
+    <view class="caption">该功能仅供参考，我们尽可能使其不会出错，实际使用仍需认真与教务系统核对；</view>
+    <view class="caption">一小节为一节的课程包含在视图上以所在大节表示，例如第4节显示为3-4节；第6-8节显示为5-6，7-8节；8-9节显示为7-8，9-11节；</view>
+    <view class="caption">部分无课使用范围单双，例如“1-5单”表示1-5周中的单数周，即1、3、5周，双数周同理；</view>
+    <view class="caption">尽量防止超格，无课表中仅展示1-17周无课情况；</view>
+    <view class="caption">如果出现超格或者其他异常情况，请反馈给我们。</view>
+
+  </block>
+  <block wx:else>
+    <van-empty description="请先在课程表页面获取课程表" />
+  </block>
+
+</view>

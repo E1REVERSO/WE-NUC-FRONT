@@ -1,0 +1,10 @@
+<!--components/switchBlock/switchBlock.wxml-->
+<view class="main {{open?'active':''}}" bindtap="onClick" bindlongtap="onLongClick">
+  <view class="icon">
+    <van-icon class-prefix="{{prefix}}" name="{{icon}}" />
+  </view>
+  <view class="text">
+    <view class="name">{{name}}</view>
+    <view class="desc">{{desc}}</view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "就餐人数",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-circle": "@vant/weapp/circle/index"
+  }
+}

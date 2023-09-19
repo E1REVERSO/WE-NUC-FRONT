@@ -1,0 +1,21 @@
+<!--components/todayCourse/todayCourse.wxml-->
+<!-- <view class="head">
+  <view class="title">今日课程</view>
+  <view class="subtitle">今天共有 {{courses.length}} 节课</view>
+</view> -->
+<view class="card">
+  <block wx:for="{{courses}}" wx:key="kcmc">
+    <todayCourseItem class="item" name="{{item.kcmc}}" place="{{item.cdmc}}" sections="{{item.sections[0].section+'-'+item.sections[item.sections.length-1].section}}" color="{{color[item.kcmc]}}" teacherName="{{item.xm}}" time="{{item.time}}" />
+
+
+  </block>
+  <view class="text" wx:if="{{courses.length}}">没有更多课了</view>
+  <view class="info login" bindtap="toLogin" wx:if="{{!login}}"><text>你还没有登录\n「个人门户」\n点击这里登录</text></view>
+
+  <view class="info" wx:elif="{{infoShow}}">
+    <view class="loading" wx:if="{{loading}}">
+      <image class="loading__img" mode="aspectFill" src="/static/loading.gif"></image>
+    </view>
+    <text>{{info}}</text>
+  </view>
+</view>

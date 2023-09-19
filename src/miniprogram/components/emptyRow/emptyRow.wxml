@@ -1,0 +1,46 @@
+<wxs module="m1">
+  module.exports.judge = function (info, index) {
+    var jcs = [
+      [1, 2],
+      [3, 4],
+      [5, 6],
+      [7, 8],
+      [9, 10, 11]
+    ]
+    var jc_item = jcs[index]
+    var empty_flag = true
+    for (var i = 0; i < jc_item.length; i++) {
+      var ind = '' + jc_item[i]
+      if (!info[ind]) {
+        empty_flag = false
+        break;
+      }
+    }
+    return empty_flag
+  }
+</wxs>
+<view class="normal" hover-class="main-hover" hover-stay-time="70" wx:if="{{type=='normal'}}">
+
+  <view class="name">{{item.cdmc}}</view>
+  <view class="items">
+
+    <block wx:for="{{5}}" wx:key="*this">
+      <view class="empty item" style="margin: 8rpx 12rpx;" wx:if="{{m1.judge(info,item)}}">空</view>
+      <view class="full item" style="margin: 8rpx 12rpx;" wx:else>课</view>
+    </block>
+
+  </view>
+</view>
+
+<view class="detail" hover-class="main-hover" hover-stay-time="70" wx:elif="{{type=='detail'}}">
+
+  <view class="name">{{item.cdmc}}</view>
+  <view class="items">
+
+    <block wx:for="{{11}}" wx:key="*this">
+      <view class="empty item" wx:if="{{info[item + 1]}}">{{item + 1}}</view>
+      <view class="full item" wx:else>{{item + 1}}</view>
+    </block>
+
+  </view>
+</view>

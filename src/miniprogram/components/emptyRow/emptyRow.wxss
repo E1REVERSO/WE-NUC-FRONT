@@ -1,0 +1,89 @@
+/* components/emptyRow/emptyRow.wxss */
+
+.detail {
+  display: flex;
+  color: #333333;
+  font-size: 28rpx;
+  /* overflow: auto; */
+  /* justify-content: space-between; */
+  background-color: #fff;
+  width: fit-content;
+  padding-right: 32rpx;
+}
+
+.normal {
+  padding: 8rpx 0;
+  display: flex;
+  color: #333333;
+  background-color: #fff;
+  width: fit-content;
+}
+
+.main-hover {
+  background-color: #d5d7db;
+}
+
+.main-hover .name {
+  background-color: #F0F1F3;
+}
+
+.normal .name {
+  min-width: 150rpx;
+  max-width: 150rpx;
+  /* z-index: 99; */
+  background-color: #fff;
+
+  border-right: 1px solid #eeeeee;
+  justify-content: center;
+  font-size: 30rpx;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.detail .name {
+  position: sticky;
+  left: 0;
+  min-width: 120rpx;
+  max-width: 120rpx;
+
+  font-weight: bold;
+  font-size: 24rpx;
+
+  /* padding: 8rpx 32rpx 8rpx 12rpx; */
+  /* z-index: 99; */
+  background-color: #fff;
+
+  border-right: 1px solid #eeeeee;
+
+  display: flex;
+  padding-left: 16rpx;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  /* flex: 6; */
+}
+
+.empty,
+.full {
+  width: 84rpx;
+  text-align: center;
+  margin: 8rpx 6rpx;
+  padding: 0 16rpx;
+  border-radius: 4rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty {
+  background-color: #256BFD;
+}
+
+.full {
+  background-color: #cecece;
+}

@@ -1,0 +1,9 @@
+<!--components/mainMenu/mainMenu.wxml-->
+<view class="mainMenu">
+  <van-grid column-num="{{num}}" clickable icon-size='54rpx' border="{{false}}" square>
+    <block wx:for="{{data}}" wx:key="text">
+      <!-- {{item.badge}} -->
+      <van-grid-item dot="{{item.dot}}" badge="{{item.badge}}" icon="{{item.icon}}" text="{{item.text}}" bindtap="action" data-type="{{item.type}}" data-content1="{{item.content1}}" data-content2="{{item.content2}}" />
+    </block>
+  </van-grid>
+</view>

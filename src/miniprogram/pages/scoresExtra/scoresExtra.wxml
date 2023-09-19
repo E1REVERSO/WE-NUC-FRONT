@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="card-nopadding tab">
+    <van-tabs active="{{ xn }}" bind:change="onChangeXn" color="#1987FA">
+      <block wx:for="{{xns}}" wx:key='*this'>
+        <van-tab name="{{item}}" title="{{item}}"></van-tab>
+      </block>
+    </van-tabs>
+
+    <van-tabs active="{{ xq - 1 }}" bind:change="onChangeXq" line-height="2px" color="#1987FA">
+      <van-tab title="上学期"></van-tab>
+      <van-tab title="下学期"></van-tab>
+    </van-tabs>
+
+    <view class="tips-center">下拉即可刷新</view>
+  </view>
+
+  <!-- <view class="termInfo">
+    <view class="termInfo__title">成绩统计</view>
+    <view class="termInfo__group">
+      <view>你本学期共参加了<text>{{scores[0][xn][xq].length}}</text>门课的考试，合计学分<text>{{xqjd.xfsum}}</text>；</view>
+      <view>其中你获得了<text>{{xqjd.xfsumgain}}</text>学分，计算绩点<text>{{xqjd.jd}}</text>。</view>
+    </view>
+    <view class="termInfo__group">
+      <view wx:if="{{!points}}">总绩点加载中。。。</view>
+      <block wx:for="{{points}}" wx:key="kcxz">
+        <view>你一共获得了<text>{{item.hdxf}}</text>{{item.kcxz}}学分，计算绩点<text>{{item.jd?item.jd:'--'}}</text>；</view>
+      </block>
+    </view>
+  </view> -->
+
+  <block wx:if="{{scores[0][xn][xq]}}">
+    <view class="gap"></view>
+    <view class="caption">成绩统计放到最底部了</view>
+
+
+    <block wx:for="{{scores[0][xn][xq]}}" wx:key="kch">
+      <scoreItem obj="{{item}}" />
+    </block>
+
+
+    <view class="gap"></view>
+    <view class="caption">成绩统计</view>
+    <view class="gap"></view>
+    <view class="caption">你本学期共参加了{{scores[0][xn][xq].length}}门课的考试，合计学分{{xqjd.xfsum}}；</view>
+    <view class="caption">其中你获得了{{xqjd.xfsumgain}}学分，计算绩点{{xqjd.jd}}。</view>
+    <view class="gap"></view>
+  </block>
+  <block wx:else>
+    <van-empty description="无本学期成绩" />
+  </block>
+  <block wx:for="{{points}}" wx:key="kcxz">
+    <view class="caption">你一共获得了{{item.hdxf}}{{item.kcxz}}学分，计算绩点{{item.jd?item.jd:'--'}}；</view>
+  </block>
+</view>

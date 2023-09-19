@@ -1,0 +1,61 @@
+<!--pages/washers/washers.wxml-->
+<view class="container">
+  <view class="card" bindtap="showSelector">
+    <view class="select">
+      选择宿舍楼 {{dormitory}}
+    </view>
+  </view>
+  <view class="caption bold">点击洗衣机可查看洗衣机二维码预约</view>
+  <view class="caption">二维码请保存后使用洗衣机对应APP扫描</view>
+  <view class="gap"></view>
+  <view class="caption">Q：没有您的宿舍楼或洗衣机错误？</view>
+  <view class="caption">A：请联系客服处理哦～</view>
+  <view class="caption">Tip：下拉即可获取最新状态哦</view>
+  <block wx:for="{{data}}" wx:key="_id">
+    <view class="item" bindtap="showQrCode" data-qrcode="{{item.qrCode}}">
+      <view class="icon">
+        <view class="outer">
+          <view class="circle"></view>
+
+          <view wx:if="{{!item.online}}" class="light offline" />
+          <block wx:else>
+            <view wx:if="{{!item.orderId}}" class="light available" />
+            <view wx:else class="light occupied" />
+          </block>
+        </view>
+      </view>
+
+      <view class="info">
+        <view class="name">{{item.no}}号机</view>
+        <view class="model">
+          {{item.readableName}}
+        </view>
+      </view>
+
+      <view wx:if="{{!item.online}}" class="stats offline">离线</view>
+      <block wx:else>
+        <view wx:if="{{!item.orderId}}" class="stats available">可用</view>
+        <view wx:else class="stats occupied">{{item.remainTime}}分钟</view>
+      </block>
+    </view>
+  </block>
+  <view class="caption">以上数据每分钟更新一次</view>
+  <view class="caption">数据来自U净，该功能仅供参考</view>
+  <view class="caption">本程序不对以上信息负责</view>
+
+</view>
+
+
+<van-popup show="{{ selectorShow }}" position="bottom" closeable bind:close="onClose">
+  <view class="switches">
+    <view class="caption">筛选条件</view>
+    <view class="comfirm" bindtap="comfirm">确定</view>
+    <view class="content">
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 280px;" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{categories}}" wx:key="*this" style="line-height: 50px; text-align: center;">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</van-popup>

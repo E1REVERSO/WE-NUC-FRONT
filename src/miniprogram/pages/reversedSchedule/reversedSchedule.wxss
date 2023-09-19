@@ -1,0 +1,160 @@
+/* miniprogram/pages/reversedSchedule/reversedSchedule.wxss */
+.container {
+  margin: 12rpx 28rpx 0 28rpx;
+}
+
+.caption {
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 24rpx;
+  margin: 8rpx 28rpx 4rpx 28rpx;
+}
+
+.gap {
+  padding: 8rpx 0;
+  width: 100%;
+  height: 2rpx;
+  color: #eee;
+}
+
+
+.title {
+  padding-bottom: 12rpx;
+  margin-bottom: 6rpx;
+  border-bottom: 1rpx solid #eee;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-table {
+  background-color: #fff;
+  /* padding: 12rpx; */
+  padding: 8rpx 0 8rpx 0;
+  border-radius: 12rpx;
+
+  position: relative;
+}
+
+.head {
+  display: flex;
+
+  font-size: 24rpx;
+  text-align: center;
+
+  height: 56rpx;
+
+  border-bottom: 1rpx solid #eee;
+}
+
+.head .left {
+  flex: 2;
+  color: #999999;
+  border-right: 1rpx solid #eee;
+}
+
+.head .cell {
+  flex: 3;
+}
+
+.day {
+  color: #333333;
+}
+
+.body {
+  display: flex;
+
+  font-size: 24rpx;
+  /* text-align: center; */
+}
+
+.section {
+  font-size: 20rpx;
+  height: 96rpx;
+
+  flex: 1;
+}
+
+.section__item {
+  border-bottom: 1rpx solid #eee;
+  height: 100%;
+  width: 100%;
+
+  text-align: center;
+}
+
+.section__name {
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.section__time {
+  font-size: 16rpx;
+  color: #999999;
+}
+
+.body .column {
+  flex: 3;
+  height: 1224rpx;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.left__column {
+  height: 1224rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.body .left {
+  flex: 2;
+
+  border-right: 1rpx solid #eee;
+}
+
+.body .column .cell {
+  color: #333;
+  font-size: 20rpx;
+  background-color: #1987FA1A;
+  text-align: center;
+
+  border-radius: 6rpx;
+  margin: 3rpx;
+}
+
+.cell__content {
+  padding: 8rpx;
+  width: 100%;
+}
+
+.info+.info {
+  margin-top: 8rpx;
+}
+
+.nc {
+  color: #999999;
+  margin: 8rpx
+}
+
+.card {
+  margin-top: 24rpx;
+  background-color: #fff;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1);
+}
+
+.tip-item {
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.tip-item+.tip-item {
+  margin-top: 12rpx;
+}

@@ -1,0 +1,22 @@
+<!--components/hello/hello.wxml-->
+<view class="main">
+  <view class="left">
+    
+    <block wx:if="{{!info._id}}">
+      <view>
+        <view class="title">您好！欢迎使用We中北</view>
+        <view class="sub">为您打造更人性化的校园服务</view>
+      </view>
+    </block>
+    
+    <block wx:else>
+      <view bindtap="showImg">
+        <view class="title">今日 {{info.should}} <text class="title__extra">来自「單向历」OCR</text></view>
+        <view class="sub">{{info.say}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="right">
+    <wether />
+  </view>
+</view>

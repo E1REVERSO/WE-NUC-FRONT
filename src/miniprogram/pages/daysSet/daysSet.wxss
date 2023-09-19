@@ -1,0 +1,37 @@
+/* pages/daysSet/daysSet.wxss */
+.calendar {
+  margin: 72rpx 32rpx;
+}
+
+.operate {
+  margin-top: 32rpx;
+}
+
+.btn {
+  height: 76rpx;
+  margin: 20rpx 28rpx;
+  border-radius: 8rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  font-size: 28rpx;
+}
+
+.save {
+  background-color: #007CF9;
+}
+
+.delete {
+  background-color: #DA4346;
+}
+
+.add {
+  background-color: #007CF9;
+}
+
+.checkVal{
+  height: 48rpx;
+}

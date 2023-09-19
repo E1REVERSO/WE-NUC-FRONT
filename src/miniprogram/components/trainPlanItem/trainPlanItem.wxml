@@ -1,0 +1,27 @@
+<!--components/trainPlanItem/trainPlanItem.wxml-->
+<view class="main" hover-class="main-hover" hover-stay-time="70">
+  <view class="top">
+    <view class="name">{{info.kcmc}}</view>
+  </view>
+
+  <view class="middle">
+    <view class="detail">
+      <view class="detail__item">课程类别：{{info.kclbmc}}</view>
+      <view class="detail__item">课程性质：{{info.kcxzmc}}</view>
+      <view class="detail__item">考核方式：{{info.khfsdm}}</view>
+      <view class="detail__item">开课学院：{{info.kkbmmc}}</view>
+      <view class="detail__item">考试形式：{{info.ksxsdm}}</view>
+      <view class="detail__item">排课周次：{{info.qsjsz}}</view>
+      <view class="detail__item">学时安排：{{info.xsxxxx}}</view>
+    </view>
+
+    <view class="right">
+      <view class="label">{{info.dlbs}}</view>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <view class="bottom__left">学分：{{info.xf}}</view>
+    <view class="bottom__right">排课学期：{{info.yyxdxnxqmc}}</view>
+  </view>
+</view>

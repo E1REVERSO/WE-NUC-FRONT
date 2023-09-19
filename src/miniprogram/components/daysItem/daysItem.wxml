@@ -1,0 +1,36 @@
+<!--components/daysItem/daysItem.wxml-->
+<view class="main">
+  <view class="name">
+    <view>
+      <van-icon class="star" wx:if="{{info.top}}" name="star" />
+      {{info.name}}
+    </view>
+  </view>
+
+  <view class="date">{{info.realdate}}</view>
+  <view class="date">{{info.week}}</view>
+
+  <view class="day">
+
+    <!-- <text class="day__text">{{info.days > 0?'还有':(info.days == 0?'':'过去')}}</text><text
+      class="day__days {{info.days > 0?'positive':''}} {{ info.days < 0?'negative':''}}">{{info.days < 0?
+        -info.days:info.days}}</text><text class="day__text">天</text> -->
+
+    <block wx:if="{{info.days > 0}}">
+      <text class="day__text">还有</text>
+      <text class="day__days positive">{{info.days}}</text>
+      <text class="day__text">天</text>
+    </block>
+
+    <block wx:if="{{info.days < 0}}">
+      <text class="day__text">过去</text>
+      <text class="day__days negative">{{-info.days}}</text>
+      <text class="day__text">天</text>
+    </block>
+
+    <text class="day__days zero" wx:if="{{info.days == 0}}">今天</text>
+
+
+
+  </view>
+</view>

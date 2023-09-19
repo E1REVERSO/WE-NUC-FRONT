@@ -1,0 +1,82 @@
+<wxs module="m1">
+	module.exports.getStatus = function (status) {
+		if (status.memory >= 80) {
+			return {
+				color: "#782d29",
+				text: "爆满"
+			}
+		} else if (status.memory >= 60) {
+			return {
+				color: "#9e853e",
+				text: "拥挤"
+			}
+		} else if (status.memory >= 40) {
+			return {
+				color: "#3A79FE",
+				text: "良好"
+			}
+		} else {
+			return {
+				color: "#497e2a",
+				text: "畅通"
+			}
+		}
+	}
+</wxs>
+<view class="card main" wx:if="{{show}}">
+	<view class="content">
+
+		<view class="item" style="color: {{_color}};" catchtap="onClickMember">
+			<view class="val">{{ online }}</view>
+			<view class="key">当前在线</view>
+		</view>
+		<view class="spliter" />
+		<view class="item" catchtap="onClickStatus">
+			<view class="val" style="color: {{status?m1.getStatus(status).color:''}};">{{ status?m1.getStatus(status).text:ping }}</view>
+			<view class="key">服务器状态</view>
+		</view>
+	</view>
+
+	<block wx:if="{{online == '服务器出错'}}">
+		<view class="tips">教务系统暂时无法连接，教务系统关闭或系统出错</view>
+	</block>
+</view>
+
+
+
+<!-- <view class="card" wx:if="{{show}}">
+	<view style="display: flex;justify-content: center;align-items: center">
+		<view class="item">
+			<view>
+				<view style="font-size: 38rpx;color:{{ color }};">
+					{{ online }}
+				</view>
+				<view class="title">
+					当前在线
+				</view>
+			</view>
+		</view>
+
+		<view class="spliter" />
+		<view class="item">
+			<view>
+
+				<view style="font-size: 38rpx;color:{{ color }};">
+					{{ ping }}
+				</view>
+				<view class="title">
+					连接延迟
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<block wx:if="{{ jwxt_ping == '超时' }}">
+		<view class="timeout">
+			<van-icon name="info" />
+			<view style="margin-left: 5rpx;">
+				教务系统暂时无法连接，教务系统关闭或系统出错
+			</view>
+		</view>
+	</block>
+</view> -->

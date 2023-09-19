@@ -1,0 +1,43 @@
+<van-notify id="van-notify" safeAreaInsetTop />
+<view class="container">
+	<view class="title">个人门户绑定</view>
+	<view class="subTitle">欢迎使用We中北</view>
+	<view class="form">
+		<view class="formItem">
+			<input placeholder="请输入您的账号" type="text" bindinput="uninput" disabled="{{loading}}" />
+		</view>
+		<view class="formItem">
+			<input placeholder="请输入您的密码" type="password" bindinput="pwinput" disabled="{{loading}}" />
+		</view>
+	</view>
+	<view class="forget">
+		<view class="cont" bindtap="forgetPwd"><text style="text-decoration: underline">忘记密码？</text></view>
+	</view>
+	<view class="btn {{loading?'btn-loading':''}}" bindtap="login" style="display: flex; align-items: center; justify-content: center;line-height: 1; gap: 12rpx;">
+		<view class="loading" wx:if="{{loading}}">
+			<van-loading type="spinner" color="#fff" size="16" />
+		</view>
+		<view class="text">{{loading?'登录中':'立即登录'}}</view>
+	</view>
+	<view class="read tips" bindtap="toUserKnow">
+		登陆成功代表已阅读并同意<text style="text-decoration: underline">《用户条款》</text>
+	</view>
+
+	<view class="bottom tips">
+		<view>请提前确认账号密码正确</view>
+		<view>不要多次尝试</view>
+	</view>
+</view>
+
+<van-dialog use-slot title="温馨提示" show="{{show}}" bind:close="onCloseDialog" confirm-button-color="#3A79fe">
+	<view class="dialog" style="text-align: center;" wx:if="{{show_type == 0}}">
+		<view>“密码失效，请进入个人门户修改密码”？</view>
+		<view>根据学校对个人门户账户的管理规定，对于新注册/刚重置过密码的用户需要进入学校个人门户网站(newi.nuc.edu.cn)进行重置密码操作。</view>
+		<view catchtap="forgetPwd" style="justify-content: center;line-height: 1;font-size: 28rpx;color: #3d74b4;margin-top: 12rpx;">更多常见提示 ></view>
+
+	</view>
+	<view class="dialog" style="text-align: center;" wx:if="{{show_type==1}}">
+		<view>登录遇到困难了？</view>
+		<view catchtap="toServiceStaff" style="justify-content: center;line-height: 1;font-size: 28rpx;color: #3d74b4;margin-top: 12rpx;">联系客服 ></view>
+	</view>
+</van-dialog>

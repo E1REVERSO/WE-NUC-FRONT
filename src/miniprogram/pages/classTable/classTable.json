@@ -1,0 +1,18 @@
+{
+  "navigationStyle": "custom",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "classTable": "/components/classTable/classTable",
+    "minorCourse": "/components/minorCourse/minorCourse",
+    "authClassTable": "/components/authClassTable/authClassTable",
+    "switchBlock": "/components/switchBlock/switchBlock",
+    "radioSwitch": "/components/radioSwitch/radioSwitch",
+    "hiveBtn": "/components/hiveBtn/hiveBtn",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "enablePullDownRefresh": true
+}

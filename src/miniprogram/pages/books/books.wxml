@@ -1,0 +1,12 @@
+<view class="head">
+    <van-search value="{{ value }}" bind:change="onChange" placeholder="请输入图书名称" bind:search="onSearch" action-text="搜索" show-action="{{false}}" focus />
+</view>
+<view class="container" style="padding-top: {{head.height}}px;">
+    <view class="list">
+
+        <waterFall listData="{{list}}" columnGap="24rpx" type="{{2}}" pageSize="{{20}}" generic:item="bookItem"></waterFall>
+        <loadMore wx:if="{{loading}}" index="{{3}}" text="{{text}}" type="primary"></loadMore>
+        <noMore backgroundColor="#f6f6f6" wx:if="{{noMore}}"></noMore>
+        <van-empty image="search" description="没找到搜索结果" wx:if="{{!loading && !list.length}}" />
+    </view>
+</view>

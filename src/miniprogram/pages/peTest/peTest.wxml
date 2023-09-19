@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="content">
+    <!-- <van-field model:value="{{ name }}" placeholder="请输入姓名" border="{{ false }}" clearable label="姓名" icon="guide-o" /> -->
+    <van-field model:value="{{ grade }}" clickable placeholder="请选择年级" disabled border="{{ false }}" clearable label="年级" icon="guide-o" bindtap="onChooseGrade" />
+    <van-field model:value="{{ gender }}" clickable placeholder="请选择性别" disabled border="{{ false }}" clearable label="性别" icon="guide-o" bindtap="onChooseGender" />
+    <van-field model:value="{{ height }}" placeholder="请输入身高：单位（cm）" type="digit"  border="{{ false }}" clearable label="身高" bind:click-icon="onClickBMI" icon="question-o" />
+    <van-field model:value="{{ weight }}" placeholder="请输入体重：单位（kg）" type="digit" border="{{ false }}" clearable label="体重" icon="question-o" bind:click-icon="onClickBMI" />
+    <van-field model:value="{{ lung }}" placeholder="请输入肺活量：单位（ml）" type="number" border="{{ false }}" clearable label="肺活量" bind:click-icon="onClickLung" icon="question-o" />
+    <van-field model:value="{{ jump }}" placeholder="请输入立定跳远个数" type="number" border="{{ false }}" clearable label="立定跳远" icon="question-o" bind:click-icon="onClickJump" />
+    <van-field model:value="{{ zwtqq }}" placeholder="请输入坐位体前屈个数" type="number" border="{{ false }}" clearable label="坐位体前屈" icon="question-o" bind:click-icon="onClickSit" />
+    <van-field model:value="{{ run50 }}" placeholder="请输入时间：单位（s）" type="digit" border="{{ false }}" clearable label="50米跑" icon="question-o" bind:click-icon="onClick50" />
+    <van-field model:value="{{ run00 }}" placeholder="请输入时间：单位（min.s）" type="digit" border="{{ false }}" clearable label="{{gender=='女'?'800米跑':'1000米跑'}}" bind:click-icon="onClick00" icon="question-o" />
+    <van-field model:value="{{ ytxs }}" bind:click-icon="onClickYt" placeholder="请输入{{gender=='女'?'仰卧起坐':'引体向上'}}个数" border="{{ false }}" clearable label="{{gender=='女'?'仰卧起坐':'引体向上'}}" type="number" icon="question-o" />
+  </view>
+  <view bindtap="onQuery" class="card">
+    <view class="select">
+      立即计算
+    </view>
+  </view>
+</view>
+
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelect" />

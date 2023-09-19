@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="part">
+    <view class="title">默认密码是什么？</view>
+    <view class="content">zbdx+身份证后六位</view>
+  </view>
+  <view class="part">
+    <view class="title">提示“密码失效，请进入个人门户修改密码”怎么办？</view>
+    <view class="content">在第一次使用个人门户/学校主动重置学生密码后会提示这句话，需要VPN/校园网进入个人门户修改密码哦。</view>
+  </view>
+  <view class="part">
+    <view class="title">个人门户地址是多少？</view>
+    <view class="content"> 新个人门户地址：<text style="text-decoration: underline"
+        bindtap="onClickNewi">http://newi.nuc.edu.cn/</text></view>
+  </view>
+  <view class="part">
+    <view class="title">忘记密码操作流程</view>
+    <view class="content"> 进入个人门户：<text style="text-decoration: underline"
+        bindtap="onClickNewi">http://newi.nuc.edu.cn/</text></view>
+    <view class="content"> 点击<text style="text-decoration: underline">忘记密码</text></view>
+    <view class="content"> 密保邮箱为中北大学学生邮箱，地址为<text style="text-decoration: underline"
+        bindtap="onClickMail">http://mail.st.nuc.edu.cn/</text></view>
+    <view class="content">密保邮箱账号：学号</view>
+    <view class="content">密保邮箱密码：身份证后六位+Zbdx</view>
+  </view>
+
+  <view class="part">
+    <view class="title">VPN如何使用呢？</view>
+    <view class="content"> VPN使用方法：<text style="text-decoration: underline" bindtap="toVPN">点此进入</text></view>
+  </view>
+</view>

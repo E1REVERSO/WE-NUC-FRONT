@@ -1,0 +1,8 @@
+<!--components/radioSwitch/radioSwitch.wxml-->
+<view class="main">
+  <block wx:for="{{items}}" wx:key="*this">
+    <view class="item {{(currentName == item || current == index)?'active':''}}" bindtap="choose" data-idx="{{index}}">
+      {{item}}
+    </view>
+  </block>
+</view>

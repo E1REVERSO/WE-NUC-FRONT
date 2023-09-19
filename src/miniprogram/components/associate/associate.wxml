@@ -1,0 +1,11 @@
+<view class="main">
+    <input bindinput="onInput" type="text" placeholder="{{placeholder}}" model:value="{{input}}"
+        style="border: 1rpx solid {{ok?'#65D12C':'#DC4E41'}};" />
+    <view class="associate" wx:if="{{tag && tag.length}}">
+        <view class="title">猜你想搜：</view>
+        <block wx:for="{{tag}}" wx:key="index">
+            <view class="tag" bindtap="onClickItem" data-item="{{item}}">{{item._id}}</view>
+
+        </block>
+    </view>
+</view>

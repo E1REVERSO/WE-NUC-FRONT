@@ -1,0 +1,9 @@
+.map {
+  padding: 16rpx;
+}
+
+.map-image {
+  border-radius: 10rpx;
+  width: 100%;
+  vertical-align: middle;
+}

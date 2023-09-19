@@ -1,0 +1,70 @@
+/* components/daysItemBar/daysItemBar.wxss */
+.main {
+  background-color: #fff;
+  margin: 20rpx 0;
+  padding: 16rpx 28rpx;
+  display: flex;
+  border-radius: 4rpx;
+  box-shadow: 0 4rpx 8rpx rgba(172, 172, 172, 0.1);
+}
+
+.main-hover {
+  background-color: rgb(242, 243, 245);
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #393939;
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.star {
+  /* display: inline; */
+  font-size: 24rpx;
+  color: #FF990F;
+  margin-right: 4rpx;
+}
+
+.days {
+  text-align: right;
+  width: 100%;
+}
+
+.days__day {
+  color: rgb(219, 175, 127);
+  font-size: 48rpx;
+  letter-spacing: -4rpx;
+}
+
+.days__text {
+  font-size: 22rpx;
+}
+
+.positive {
+  color: rgb(71, 90, 192);
+}
+
+.negative {
+  color: rgb(245, 85, 85);
+}
+
+.zero{
+  font-size: 36rpx;
+}

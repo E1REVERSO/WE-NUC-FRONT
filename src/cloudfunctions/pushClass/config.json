@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "openapi": [
+      "uniformMessage.send"
+    ]
+  },
+  "triggers": [{
+    "name": "myTrigger",
+    "type": "timer",
+    "config": "*/15 * 7-21 * * *"
+  }]
+}

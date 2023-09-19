@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "balance": "/components/balance/balance"
+  }
+}

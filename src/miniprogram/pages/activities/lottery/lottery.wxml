@@ -1,0 +1,73 @@
+<view class="container">
+    <swiper class="swiper" indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'
+        indicator-color="white" indicator-active-color="#4D86FF">
+        <block wx:for="{{movies}}" wx:for-index="index" wx:key="index">
+            <swiper-item>
+                <image src='{{item.url}}' mode='aspectFill'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="info">
+        <view class="title">{{data.title}}</view>
+        <view class="detail"><text>{{data.detail}}</text></view>
+        <view class="main_build" wx:if="{{data.main_build}}">
+            <text class="title">主办方：</text>
+            <text>{{data.main_build}}</text>
+        </view>
+        <view class="sec_build" wx:if="{{data.sec_build}}">
+            <text class="title">承办方：</text>
+            <text>{{data.sec_build}}</text>
+        </view>
+        <view class="reward-set">
+            <view class="part" wx:if="{{data.reward}}" wx:key="index">
+                <block wx:for="{{data.reward}}" wx:key="index">
+                    <van-card num="{{item.count}}" desc="{{item.reward}}" title="{{item.name}}" thumb="{{ item.image }}"
+                        price="{{item.price}}" />
+                </block>
+
+            </view>
+        </view>
+    </view>
+    <view class="user-info">
+        <view class="user-info__title">{{over?'获奖名单':'助力好友'}}</view>
+        <view class="reward_list" wx:if="{{over}}">
+            <view class="reward_list" wx:if="{{data.reward_data && data.reward_data.length}}">
+                <block wx:for="{{data.reward_data}}" wx:key="index">
+                    <view class="item">
+                        <image class="avatar" src="{{item.user.avatar}}"></image>
+                        <view class="nick">{{item.user.nick}}</view>
+                        <view class="reward">({{item.reward.name}})</view>
+                    </view>
+                </block>
+            </view>
+
+            <view wx:else>未开奖，超时一天请及时联系管理员开奖</view>
+        </view>
+        <view class="user_list" wx:else>
+
+            <block wx:for="{{indi_data.joiner_detail}}">
+                <view class="item">
+                    <image class="avatar" src="{{item.avatar}}"></image>
+                    <view class="nick">{{item.nick}}</view>
+                </view>
+            </block>
+
+        </view>
+    </view>
+</view>
+
+
+<van-submit-bar currency="" decimal-length="{{0}}" button-text="{{isMine?'邀请助力':'参加活动'}}"
+    button-type="{{isMine?'warning':'info'}}" price-class="join-button" loading="{{loading}}"
+    price="{{over?null:(data.join_count-indi_data.joiner.length)*100}}" label="{{over?'活动已结束':'距离完成助力还差'}}"
+    suffix-label="人" disabled="{{over}}" bind:submit="onClickButton" tip="{{ true }}">
+    <!-- <van-tag type="primary">标签</van-tag> -->
+    <view slot="tip">{{over?'活动已结束，感谢您的参与':'活动正在火爆进行中，点击即可参与'}}</view>
+</van-submit-bar>
+
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onSelect"
+    bind:close="onClose" />
+
+<view class="out">
+    <wxml-to-canvas class="widget" width='465' height="827"></wxml-to-canvas>
+</view>

@@ -1,0 +1,30 @@
+/* components/hiveBtn/hiveBtn.wxss */
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 24rpx;
+  padding: 8rpx 0;
+  margin: 8rpx;
+  box-shadow: 0 0 8rpx #eeeeee;
+  border-radius: 6rpx;
+  width: 76rpx;
+  color: #666666;
+
+  transition: all .2s;
+}
+
+.active {
+  background-color: #007CF9;
+  color: #fff;
+  box-shadow: 0rpx 0rpx 8rpx #007CF966;
+}

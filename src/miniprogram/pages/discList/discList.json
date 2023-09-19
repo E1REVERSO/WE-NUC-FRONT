@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "专业列表",
+  "usingComponents": {
+    "disciplineItem": "/components/disciplineItem/disciplineItem",
+    "searchBar": "/components/searchBar/searchBar"
+  }
+}

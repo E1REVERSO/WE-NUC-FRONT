@@ -1,0 +1,54 @@
+/* components/picWall/picWall.wxss */
+.main {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.photo-container {
+  position: relative;
+  top: -36rpx;
+  left: -120rpx;
+  transform: rotate(8deg);
+  height: 360rpx;
+}
+
+.photo-cont-item {
+  display: flex;
+  /* min-width: calc(1600rpx * 6); */
+}
+
+.photo-item {
+  flex-shrink: 0;
+  height: 180rpx;
+  margin-right: 36rpx;
+  margin-bottom: 36rpx;
+  border-radius: 16rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 2rpx 32rpx rgba(0, 0, 0, .12);
+}
+
+.animation-1 {
+  animation: scroller 20s linear infinite;
+  display: flex;
+  /* min-width: calc(1600rpx * 6); */
+}
+
+.animation-2 {
+  margin-left: 150rpx;
+  animation: scroller 16s linear infinite;
+  display: flex;
+  /* min-width: calc(1600rpx * 6); */
+}
+
+
+@keyframes scroller {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-4320rpx);
+  }
+}

@@ -1,0 +1,27 @@
+/* components/unauthorizeBar/unauthorizeBar.wxss */
+.auth {
+  background-color: #00000066;
+  position: fixed;
+  /* bottom: 92rpx; */
+  height: 96rpx;
+  width: 750rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  /* margin-bottom: constant(safe-area-inset-bottom);
+  margin-bottom: env(safe-area-inset-bottom); */
+}
+
+.auth__btn {
+  background-color: #3a79fe;
+  text-align: center;
+  margin-left: 12rpx;
+  padding: 12rpx 24rpx;
+  border-radius: 56rpx;
+}
+
+.auth__btn-hover {
+  background-color: #2e61cf;
+}

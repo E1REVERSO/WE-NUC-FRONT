@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "培养计划",
+  "usingComponents": {
+    "trainPlanItem": "/components/trainPlanItem/trainPlanItem"
+
+  }
+}

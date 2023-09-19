@@ -1,0 +1,8 @@
+<!--pages/examList/examList.wxml-->
+<view class="container">
+  <block wx:for="{{data}}" wx:key="kcmc">
+    <examItem info="{{item}}" />
+  </block>
+
+  <van-empty wx:if="{{!data.length}}" description="未查询到考试" />
+</view>

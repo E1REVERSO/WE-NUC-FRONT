@@ -1,0 +1,20 @@
+<!--components/elect/index.wxml-->
+
+<navigator wx:if="{{!info}}" class="elec-nobind" bindtap="toChoose">绑定宿舍后可以查看剩余电量</navigator>
+
+<view class="main" wx:else>
+  <view class="card-title">
+    宿舍剩余电量
+    <view class="card-title__right" bindtap="toChoose">{{info.building}} {{info.room}}</view>
+  </view>
+
+  <view class="info">
+    <view class="elect">
+      <view class="num">{{info.quantity}}</view>
+      <view class="unit">{{info.quantityunit}}</view>
+    </view>
+    <view class="lastupdate">更新时间：{{time}}</view>
+  </view>
+
+  <view class="bottom">数据2小时更新一次</view>
+</view>

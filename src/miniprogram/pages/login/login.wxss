@@ -1,0 +1,94 @@
+/* miniprogram/pages/login/login.wxss */
+.container {
+  margin: 0 32rpx 0 32rpx;
+}
+.dialog {
+  padding: 24rpx;
+  font-size: 28rpx;
+  flex-direction: column;
+  display: flex;
+  gap: 12rpx;
+  color: #333;
+}
+.forget {
+  font-size: 28rpx;
+  color: #999999;
+  padding: 32rpx 0;
+  display: flex;
+}
+
+.btn-loading {
+  opacity: 0.7;
+}
+
+.forget .cont {
+  margin: 0 4rpx 0 auto;
+  display: inline-block;
+}
+
+.title {
+  margin-left: 24rpx;
+  margin-top: 128rpx;
+  font-size: 56rpx;
+}
+
+.subTitle {
+  margin-left: 24rpx;
+  margin-top: 12rpx;
+  color: #999999;
+}
+
+.form {
+  margin-top: 128rpx
+}
+
+.formItem {
+  height: 92rpx;
+  border-radius: 4rpx;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px rgba(72, 127, 254, 0.72);
+  display: flex;
+  align-items: center;
+}
+
+.formItem+.formItem {
+  margin-top: 24rpx;
+}
+
+input {
+  height: 32rpx;
+  width: 100%;
+  margin: 0 24rpx 0 24rpx;
+
+}
+
+.btn {
+  margin-top: 24rpx;
+  height: 96rpx;
+  border-radius: 12rpx;
+  background: #487ffe;
+  box-shadow: 0px 0px 6px rgba(72, 127, 254, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  font-size: 32rpx;
+}
+
+.tips {
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.read {
+  margin: 36rpx 24rpx;
+}
+
+.bottom {
+  position: absolute;
+  text-align: center;
+  bottom: 120rpx;
+  right: 0;
+  left: 0;
+}

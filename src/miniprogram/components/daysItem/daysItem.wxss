@@ -1,0 +1,68 @@
+/* components/daysItem/daysItem.wxss */
+.main {
+  /* display: inline-block; */
+  width: 228rpx;
+  height: 228rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  margin: 6rpx 0 6rpx 28rpx;
+  padding: 24rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1);
+
+  position: relative;
+}
+
+.name {
+  font-size: 24rpx;
+  color: #333333;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+}
+
+.star {
+  /* display: inline; */
+  font-size: 24rpx;
+  color: #FF990F;
+  /* margin-right: 4rpx; */
+}
+
+.date {
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.day {
+  font-size: 40rpx;
+  /* color: #333333; */
+  text-align: center;
+
+  position: absolute;
+  bottom: 16rpx;
+  left: 24rpx;
+  right: 24rpx;
+}
+
+.day__days {
+  letter-spacing: -4rpx;
+  margin: 0 4rpx;
+  color: rgb(219, 175, 127);
+}
+
+.day__text {
+  content: '天';
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.positive {
+  color: rgb(71, 90, 192);
+}
+
+.negative {
+  color: rgb(245, 85, 85);
+}
+
+.zero {
+  font-size: 36rpx;
+}

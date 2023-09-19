@@ -1,0 +1,4 @@
+<!--components/weather/weather.wxml-->
+<view class="main">
+  {{obj.liveData.temperature || 0}}℃ {{obj.liveData.weather || ""}}
+</view>

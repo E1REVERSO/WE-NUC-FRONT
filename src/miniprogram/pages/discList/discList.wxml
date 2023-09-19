@@ -1,0 +1,9 @@
+<!--pages/discList/discList.wxml-->
+<view class="container">
+  <searchBar disable="{{onSearch}}" bind:onSubmit="search" />
+
+  <view class="info" wx:if="{{infoShow}}">{{info}}</view>
+  <block wx:else>
+    <disciplineItem class="disciplineItem" wx:for="{{result}}" wx:key="_id" info="{{item}}" />
+  </block>
+</view>

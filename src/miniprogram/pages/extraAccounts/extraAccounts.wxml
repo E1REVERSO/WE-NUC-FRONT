@@ -1,0 +1,31 @@
+<!--pages/extraAccounts/extraAccounts.wxml-->
+<navBar title='额外账户' background='#f6f6f6aa' blur="{{true}}" backgroundColorTop="f6f6f6">
+  <view slot="left" class="left-icons">
+    <view class="left-icons__item">
+      <navIcon iconName="arrow-left" prefix="van-icon" type="back" />
+    </view>
+    <view class="left-icons__item">
+      <navIcon iconName="plus" prefix="van-icon" type="navigateTo" url="/pages/extraLogin/extraLogin" />
+    </view>
+  </view>
+</navBar>
+
+<view class="container">
+
+  <block wx:for="{{data}}" wx:key="index">
+    <view class="item">
+      <profileCard noAvatar="{{true}}" bind:onClick="onClick" userinfo="{{item.data}}" />
+    </view>
+  </block>
+
+  <block wx:if="{{!data.length}}">
+    <van-empty description="你还没有登陆额外账户哦，点击页面左上角「+」即可添加" />
+  </block>
+  <block wx:else>
+    <view class="caption">若想要取消绑定请点击上方账户卡片</view>
+  </block>
+
+</view>
+
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelect"
+  cancel-text="取消" />

@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "profileCard": "../../components/profileCard/profileCard",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
+  }
+}

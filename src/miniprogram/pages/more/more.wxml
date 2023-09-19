@@ -1,0 +1,76 @@
+<!--pages/more/more.wxml-->
+<navBar title='我' background='#f6f6f6aa' blur="{{true}}" backgroundColorTop="f6f6f6"></navBar>
+<view class="container" style="{{userinfo?'':'padding-bottom: 150rpx;'}}">
+  <profileCard userinfo="{{userinfo}}" loginData="{{loginData}}" />
+  <status show time="{{time}}" bindclickStatus="onClickStatus" />
+
+  <view class="settings">
+    <block wx:if="{{userinfo}}">
+      <view class="caption">账户管理</view>
+      <view class="card">
+        <van-cell title="额外「个人中心」账户" url="/pages/extraAccounts/extraAccounts" border="{{false}}" is-link></van-cell>
+      </view>
+    </block>
+
+    <view class="caption">缓存清除 - 完全清空缓存请退出登录</view>
+    <view class="card">
+      <van-cell title="清空课程表缓存" bindtap="clearCTStorage" border="{{false}}" is-link />
+      <van-cell title="删除「 Ta的课表 」设置" bindtap="cancelImportantCT" border="{{false}}" is-link />
+      <van-cell title="清空自定义课程" bindtap="clearMainClass" border="{{false}}" is-link />
+    </view>
+
+    <view class="card">
+      <van-cell title="清空全部缓存" bindtap="clearAllStorage" border="{{false}}" is-link />
+    </view>
+
+    <view class="caption">授权管理 - 这里可以管理对别人的授权</view>
+    <view class="card">
+      <van-cell title="课程表授权" url="/pages/ctPermissions/ctPermissions" border="{{false}}" is-link />
+      <!-- <van-cell title="清空课表缓存" border="{{false}}" is-link /> -->
+    </view>
+    <view class="caption">用户身份码</view>
+    <view class="card">
+      <van-cell title="身份码" value="{{openid}}" clickable border="{{false}}" title-width="120rpx" bindtap="onClickOpenid" />
+    </view>
+    <view class="caption">程序信息</view>
+    <view class="card">
+      <van-cell title="版本号" value="1.9.4" border="{{false}}" />
+      <van-cell title="更新记录" border="{{false}}" url="/pages/updateLog/updateLog" is-link />
+    </view>
+
+    <view class="card">
+      <van-cell title="联系客服" url="/pages/serviceStaff/serviceStaff" border="{{false}}" is-link />
+      <van-cell title="关于我们" url="/pages/about/about" border="{{false}}" is-link />
+      <van-cell title="阅读《用户条款》" url="/pages/userKnow/userKnow" border="{{false}}" value="2021-07-17" is-link />
+      <!-- <van-cell title="阅读《用户条款》" url="/pages/userNeedToKnow/userNeedToKn" value="2021-07-17" border="{{false}}" is-link /> -->
+    </view>
+
+    <block wx:if="{{userinfo}}">
+      <view class="caption">账号操作</view>
+      <view class="logout" bindtap="logout">
+        退出登陆
+      </view>
+    </block>
+
+  </view>
+
+</view>
+
+<van-dialog use-slot title="{{showType == 0?'关于在线人数':'关于服务器状态'}}" show="{{ show }}" bind:close="onCloseDialog" confirm-button-color="#3A79fe">
+  <view class="dialog" wx:if="{{showType == 0}}">
+    <view>在线人数：{{showData}}</view>
+    <view>更新世界：{{serTime}}</view>
+  </view>
+  <view class="dialog" wx:else>
+    <view>内存占用：{{showData.memory}}%</view>
+    <view>CPU占用：{{showData.cpu}}%</view>
+    <view>更新世界：{{serTime}}</view>
+    <view>服务器状态为综合服务器CPU占用率、内存占用率及相关指标综合评定。服务器状态根据服务器负载从低到高排序依次为：</view>
+    <view class="flex" style="display: flex;flex-wrap: wrap;">
+      <view style="color:#497e2a">畅通 </view> - <view style="color:#3A79FE"> 良好</view>-
+      <view style="color:#9e853e"> 拥挤 </view>
+      -<view style="color:#782d29"> 爆满</view>
+    </view>
+    <view style="color: #999;font-size: 24rpx;">服务器将会不定期进行内存释放和垃圾回收处理。</view>
+  </view>
+</van-dialog>

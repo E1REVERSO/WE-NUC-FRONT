@@ -1,0 +1,24 @@
+<!--pages/hall/hall.wxml-->
+<navBar title='服务中心' background='#f6f6f6aa' blur="{{true}}" backgroundColorTop="f6f6f6">
+  <view slot="left">
+    <navIcon iconName="arrow-left" prefix="van-icon" type="back" />
+
+  </view>
+</navBar>
+
+<view class="container">
+
+  <!-- <view class="card map">
+    <image bindtap="showMap" class="map-image"
+      src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/QQ20210916-1.jpg" style="opacity: 0.8;" mode="widthFix" />
+  </view> -->
+
+  <block wx:for="{{list}}" wx:key="_id">
+    <view class="caption">{{item.title}}</view>
+    <view class="card">
+      <mainMenu num="5" data="{{data[item.name]}}" />
+    </view>
+  </block>
+
+
+</view>

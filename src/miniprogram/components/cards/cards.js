@@ -1,0 +1,28 @@
+// components/cards/cards.js
+Component({
+    /**
+     * 组件的属性列表
+     */
+    properties: {
+        size: {
+            value: "small",
+            type: String
+        },
+        data: Object,
+        imageReverse: Boolean
+    },
+
+    /**
+     * 组件的初始数据
+     */
+    data: {
+
+    },
+
+    /**
+     * 组件的方法列表
+     */
+    methods: {
+
+    }
+})

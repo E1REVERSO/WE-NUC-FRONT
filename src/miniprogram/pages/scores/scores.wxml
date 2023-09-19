@@ -1,0 +1,86 @@
+<page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
+<navBar title='成绩列表' background='#f6f6f6aa' blur="{{true}}" backgroundColorTop="f6f6f6">
+  <view slot="left" class="left-icons">
+
+    <view class="left-icons__item">
+      <navIcon iconName="arrow-left" prefix="van-icon" bind:tap="toBack" />
+    </view>
+
+    <view class="left-icons__item" wx:if="{{extraSet}}">
+      <navIcon iconName="setting-o" prefix="van-icon" bind:tap="showSettings" />
+    </view>
+    <view class="left-icons__item">
+      <navIcon iconName="chart-trending-o" prefix="van-icon" bindtap="showStatistic" />
+    </view>
+  </view>
+</navBar>
+
+<view class="container">
+
+  <view class="card-nopadding tab">
+
+    <van-tabs active="{{ xn }}" bind:change="onChangeXn" color="#1987FA">
+      <block wx:for="{{xns}}" wx:key='*this'>
+        <van-tab name="{{item}}" title="{{item}}"></van-tab>
+      </block>
+    </van-tabs>
+
+    <van-tabs active="{{ xq-1 }}" bind:change="onChangeXq" line-height="2px" color="#1987FA">
+      <van-tab title="上学期"></van-tab>
+      <van-tab title="下学期"></van-tab>
+    </van-tabs>
+
+
+
+    <view class="tips-center">下拉即可刷新</view>
+  </view>
+
+  <block wx:if="{{scores[0][xn][xq]}}">
+    <view class="gap"></view>
+
+
+    <block wx:for="{{scores[0][xn][xq]}}" wx:key="kch">
+      <scoreItem obj="{{item}}" />
+    </block>
+
+
+    <view class="gap"></view>
+    <view class="caption">成绩统计</view>
+    <view class="gap"></view>
+    <view class="caption">你本学期共参加了{{scores[0][xn][xq].length}}门课的考试，合计学分{{xqjd.xfsum}}；</view>
+    <view class="caption">你本学期获得了{{xqjd.xfsumgain}}学分，合计绩点{{xqjd.jd}}；</view>
+    <view class="caption">你本学期获得了{{xqjd.bxxfsumgain}}必修学分，必修绩点{{xqjd.bxxqjd}}。</view>
+    <view class="gap"></view>
+  </block>
+  <block wx:else>
+    <van-empty description="无本学期成绩" />
+  </block>
+  <block wx:for="{{points}}" wx:key="kcxz">
+    <view class="caption">你一共获得了{{item.hdxf}}{{item.kcxz}}学分{{item.jd?'，计算绩点'+item.jd:''}}；</view>
+  </block>
+
+</view>
+
+<van-popup show="{{ settingsShow }}" position="bottom" closeable bind:close="onClose">
+  <view class="switches">
+    <block wx:if="{{extraSet.length}}">
+      <view class="caption">多账号显示</view>
+      <view class="content">
+        <block wx:for="{{extraSet}}" wx:key="index">
+          <view class="content__item">
+            <switchBlock name="{{item.username}}" bind:onClick="showExtra" desc="点击即可查看该账户成绩" open icon="id-card" />
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</van-popup>
+
+<van-popup show="{{ statistic }}" position="bottom" close-on-click-overlay catch:close="onCloseStatistic">
+  <!-- <i class="fa fa-close" bindtap="onCloseStatistic" /> -->
+  <view class="qiun-charts" wx:if="{{statistic}}">
+    <!-- <canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" bindtouchstart="touchColumn"></canvas> -->
+    <canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" bindtouchstart="touchLineA" bindtouchmove="moveLineA" bindtouchend="touchEndLineA"></canvas>
+    <!-- <canvas canvas-id="canvasCandle" id="canvasCandle" class="charts" disable-scroll="true" bindtouchstart="touchCandle" bindtouchmove="moveCandle" bindtouchend="touchEndCandle"></canvas> -->
+  </view>
+</van-popup>

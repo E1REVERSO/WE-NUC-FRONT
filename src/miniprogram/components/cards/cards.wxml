@@ -1,0 +1,47 @@
+<view class="card {{size}} {{data.type?data.type:'primary'}}" style="{{data.size=='small'?'height:209rpx;margin:12rpx 0;':'height:430rpx;margin:12rpx 0;'}};background:{{data.background?data.background:'#fff'}};{{data.cardStyle}};{{data.image?'display:flex;align-items:center;' + (data.imageReverse==false?'flex-direction:row-reverse;':data.imageReverse == true?'flex-direction:row;':('flex-direction:'+(imageReverse?'row-reverse;':'row;'))):''}}">
+    <view class="vote-mask" wx:if="{{data.vote}}"></view>
+    <view class="title-part" style="{{data.image?'width:61.8%;display:flex;flex-direction:column;justify-contents:center;padding:0 0 0 20rpx;' + (data.imageReverse?'flex-grow:1;':''):''}}">
+        <view class="title" style="color:{{data.background && !data.vote?'#fff':'#333'}};{{data.titleStyle}}" wx:if="{{data.title}}">{{data.title}}</view>
+        <view class="box" style="{{data.functions.pos == 'bottom' || data.image || data.vote?'flex-direction:column':'align-items:center;'}}">
+            <view class="subTitle" wx:if="{{data.subTitle}}" style="{{data.image?'font-size:24rpx;color:#888;':('color:' + (data.background?'#ffffffcc;':'#333;'))}}{{data.subTitleStyle}}">{{data.subTitle}}</view>
+            <view class="tag" wx:if="{{data.tag}}">
+                <view class="text" style="{{data.image || data.vote?'border:3rpx solid #f27324;padding:0 2rpx;'+'background:transparent;color:#f27324;':''}}{{data.tagStyle}}">{{data.tag}}</view>
+            </view>
+        </view>
+    </view>
+
+
+    <wxs module="pos">
+        module.exports.getPos = function (pos) {
+            switch (pos) {
+                case "top":
+                    return "margin:0 0 auto 0;";
+                case "bottom":
+                    return "margin:auto 0 0 0;";
+                case "middle":
+                    return "margin:auto 0 auto 0;";
+                case "fixed":
+                    return "margin:8rpx 0 0 0;width:100%;height:100%;"
+            }
+        }
+    </wxs>
+    <view class="functions" wx:if="{{data.functions}}" style="{{pos.getPos(data.functions.pos)}}">
+        <block wx:for="{{data.functions.data}}" wx:key="index">
+            <view class="function" style="{{data.functions.pos=='fixed'?'padding:0 16rpx;height:33.33%':''}}" hover-class="hover-function" hover-stay-time="70">
+                <image class="icon" src="{{item.icon}}" wx:if="{{item.icon}}"></image>
+                <view class="title">{{item.title}}</view>
+                <view style="position: absolute;right: 8rpx;margin-bottom: 8rpx;">
+                    <van-icon name="arrow" size="22rpx" color="#999" />
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="content" wx:elif="{{data.content}}" style="{{data.contentStyle}}">{{data.content}}</view>
+    <view class="image-box" wx:elif="{{data.image}}" style="{{data.imageReverse?'margin:0 0 0 auto;':''}}{{imageStyle}}">
+        <image class="image" mode="aspectFit" src="{{data.image}}"></image>
+    </view>
+    <view class="vote" wx:elif="{{data.vote}}">
+
+    </view>
+
+</view>

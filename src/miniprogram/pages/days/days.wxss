@@ -1,0 +1,55 @@
+/* pages/days/days.wxss */
+.caption {
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 24rpx;
+  margin: 8rpx 28rpx 4rpx 28rpx;
+}
+
+.container::after {
+  content: '';
+  display: block;
+  height: 72rpx;
+}
+
+.button-plus {
+  width: 100%;
+  text-align: right;
+  border-radius: 50%;
+  font-size: 50rpx;
+  padding-right: 25rpx;
+}
+
+.button-bottom {
+  background: #fff;
+  width: 232rpx;
+  height: 72rpx;
+  box-shadow: 0 4rpx 8rpx rgba(172, 172, 172, 0.1);
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.button-bottom__content {
+  display: flex;
+  align-items: center;
+}
+
+.bottom {
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12rpx;
+  position: fixed;
+  bottom: constant(safe-area-inset-bottom);
+  bottom: env(safe-area-inset-bottom);
+}
+
+
+.button-bottom-hover {
+  background-color: #fbfbfb;
+}

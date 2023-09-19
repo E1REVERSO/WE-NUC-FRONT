@@ -1,0 +1,6 @@
+<!--pages/TrainPlanDetail/TrainPlanDetail.wxml-->
+<view class="container">
+  <block wx:for="{{data}}" wx:key="_id">
+    <trainPlanItem info="{{item}}" />
+  </block>
+</view>

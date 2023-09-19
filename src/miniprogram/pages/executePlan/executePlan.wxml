@@ -1,0 +1,144 @@
+<wxs module="m1">
+    module.exports.getType = function (kcsx) {
+        switch (kcsx) {
+            case '必修':
+                return "danger"
+            case '选修':
+                return 'primary'
+            case '任选':
+                return 'success'
+            case '限选':
+                return 'warning'
+        }
+    }
+    module.exports.getIconColor = function (data) {
+        if (data.tdbj == '1') {
+            return '#9c4ba1'
+
+        }
+        else if (data.bfzcj == null && data.xnmc != null) {
+            return '#429ae5'
+        } else if (data.bfzcj != null && data.bfzcj < 60) {
+            return '#df5945'
+        } else if (data.bfzcj == null && data.xnmc == null) {
+            return '#999999'
+        } else if (data.bfzcj != null && data.bfzcj >= 60) {
+            return '#55CAB7'
+        }
+    }
+    module.exports.getStatus = function (data) {
+        if (data.tdbj == '1') {
+            return '课程替代'
+        }
+        else if (data.bfzcj == null && data.xnmc != null) {
+            return '已选'
+        } else if (data.bfzcj != null && data.bfzcj < 60) {
+            return '不及格'
+        } else if (data.bfzcj == null && data.xnmc == null) {
+            return '未选'
+        } else if (data.bfzcj != null && data.bfzcj >= 60) {
+            return '通过'
+        }
+    }
+    module.exports.getTotalScore = function (data) {
+        if (!data) return 0;
+        var total = 0;
+        for (var i = 0; i < data.length; i++) {
+            total += parseFloat(data[i].yxxf)
+        }
+        return total
+    }
+    module.exports.getIcon = function (data) {
+        if (data.tdbj == '1') {
+            return 'moments'
+        }
+        else if (data.bfzcj == null && data.xnmc != null) {
+            return 'clock-fill'
+        } else if (data.bfzcj != null && data.bfzcj < 60) {
+            return 'close-fill'
+        } else if (data.bfzcj == null && data.xnmc == null) {
+            return 'offline-fill'
+        } else if (data.bfzcj != null && data.bfzcj >= 60) {
+            return 'circle-fill'
+        }
+    }
+    module.exports.handleXn = function (data) {
+        if (data.xnmc && data.xqmc) {
+            return '已于 ' + data.xnmc + ' 第' + data.xqmc + '学期 修读'
+        } else if (data.jyxdxnmc && data.jyxdxqmc) {
+            return '建议 ' + data.jyxdxnmc + ' 第' + data.jyxdxqmc + '学期 修读'
+        }
+    }
+</wxs>
+
+<view id="container" class="container">
+    <view class="caption">
+        <view wx:if="{{data.length}}">系统共在您执行计划中检索到{{total}}个课程</view>
+        <view style="margin-top: 6rpx;">数据仅供参考，实际以教务系统查询为准</view>
+        <view style="margin-top: 6rpx;">下拉即可刷新重新获取</view>
+    </view>
+    <block wx:for="{{data}}" wx:key="index">
+        <mp-sticky container="{{container[index]}}" offset-top="0" bindscroll="onScroll">
+            <!-- <sticky recalc="{{recalc}}" scrollTop="{{scrollTop}}" stickyHeight="104rpx" container isNativeHeader stickyTop="-2"> -->
+            <view class="sticky-item" style="width: 704rpx;margin: 0 28rpx;">
+                <view class="date">{{item.xfyqjdmc}}</view>
+                <view class="amount">
+                    <view>要求最低 {{item.yqzdxf?item.yqzdxf:0}} 学分</view>
+                    <view>已获得 <text style="color:{{(item.yqzdxf <= m1.getTotalScore(item.kcList)|| !item.yqzdxf)?'green':'red'}}">{{m1.getTotalScore(item.kcList)}}</text> 学分</view>
+                </view>
+            </view>
+        </mp-sticky>
+
+        <view id="container_{{index}}" class="cell_box">
+            <view class="tui-box" wx:if="{{item.kcList && item.kcList.length}}">
+                <view class="group">
+                    <block wx:for="{{item.kcList}}" wx:for-item="it" wx:for-index="id" wx:key="id">
+                        <view class="cell" hover-class="hover-cell" hover-stay-time="70" catchtap="onClickCell" data-item="{{it}}">
+                            <view class="flex">
+                                <view>
+                                    <view class="flex">
+                                        <view class="title">{{it.kcmc}}</view>
+                                        <view class="xf">{{it.xf}}学分</view>
+                                        <!-- <van-tag type="{{m1.getType(it.xbx=='-'?'选修':'必修')}}">{{it.xbx=='-'?'选修':'必修'}}</van-tag> -->
+                                    </view>
+
+                                    <view class="desc">{{m1.handleXn(it)}}</view>
+                                </view>
+                                <view>
+                                </view>
+                                <view class="right">
+                                    <tui-icon color="{{m1.getIconColor(it)}}" size="22" name="{{m1.getIcon(it)}}"></tui-icon>
+                                    <!-- <van-icon color="{{m1.getIconColor(it)}}" size="42rpx" name="{{m1.getIcon(it)}}" /> -->
+                                    <!-- <van-tag color="{{m1.getColor(it.khfs)}}">{{it.khfs}}</van-tag> -->
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <view class="tui-box" wx:else>
+                <view class="none">
+                    <van-icon name="warning" size="36rpx" color="#42bae5" />
+                    <view class="text">这里没有数据</view>
+                </view>
+            </view>
+        </view>
+        <!-- </sticky> -->
+    </block>
+</view>
+
+<van-dialog use-slot title="课程详情" show="{{ show }}" bind:close="onClose" closeOnClickOverlay confirm-button-color="#4281f5">
+    <view class="it_group">
+        <view class="it">课程编号 : {{show_data.kch}}</view>
+        <view class="it">课程名称: {{show_data.kcmc}}</view>
+        <view class="it">课程学分 : {{show_data.xf}}</view>
+        <view class="it" wx:if="{{show_data.jyxdxnmc && show_data.jyxdxqmc}}">建议修读学年/学期 : {{show_data.jyxdxnmc+'-'+show_data.jyxdxqmc}}</view>
+        <view class="it" wx:if="{{show_data.xnmc && show_data.xqmc}}">实际修读学年/学期 : {{show_data.xnmc + '-' + show_data.xqmc}}</view>
+        <view class="it">选必修 : {{show_data.xbx}}</view>
+        <view class="it">成绩 : {{show_data.cj}}</view>
+        <view class="it">状态 : {{m1.getStatus(show_data)}}</view>
+        <view class="it">备注 : {{show_data.xq}}</view>
+
+    </view>
+
+</van-dialog>

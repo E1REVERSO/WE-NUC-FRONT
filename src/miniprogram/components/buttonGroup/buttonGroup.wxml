@@ -1,0 +1,11 @@
+<!--components/buttonGroup/buttonGroup.wxml-->
+<view class="container">
+<view class="left">
+  <image class="inner-image" src="/static/own.png"></image>
+  <view>个人中心</view>
+</view>
+<view class="right">
+  <van-icon class="inner-image" name="user-o" size="60rpx" />
+  <view>个人中心</view>
+</view>
+</view>

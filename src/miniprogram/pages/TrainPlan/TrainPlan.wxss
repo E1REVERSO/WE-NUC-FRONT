@@ -1,0 +1,126 @@
+/* pages/TrainPlan/TrainPlan.wxss */
+.caption {
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 24rpx;
+  margin: 8rpx 28rpx 4rpx 28rpx;
+}
+
+.head {
+  padding: 8rpx;
+  background-color: #fff;
+  /* margin: 8rpx 28rpx 4rpx 28rpx; */
+  box-shadow: 0 3rpx 1rpx #e1e1e1;
+}
+
+.gap {
+  padding: 6rpx 0;
+  width: 100%;
+  height: 1rpx;
+  color: #eee;
+}
+
+.other-hover {
+  color: #193f91;
+}
+
+.other {
+  text-align: right;
+  margin: 24rpx 0 0 0;
+  font-size: 32rpx;
+  color: #3a79fe;
+  padding: 12rpx 0;
+}
+
+.no-login {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+}
+
+
+
+/* components/disciplineItem/disciplineItem.wxss */
+.main {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 16rpx 20rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 6rpx 6rpx rgba(120, 120, 120, 0.1);
+
+  position: relative;
+}
+
+.main-hover {
+  background-color: #f2f3f5;
+}
+
+.id {
+  font-size: 24rpx;
+  color: #999999;
+
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.top__left {
+  flex: 2;
+}
+
+.name {
+  font-size: 36rpx;
+  color: #333333;
+  margin-bottom: 8rpx;
+  /* font-weight: bold; */
+}
+
+.grade {
+  flex: 1;
+  text-align: right;
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.top {
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.detail {
+  color: #999999;
+  font-size: 28rpx;
+  margin: 12rpx;
+  flex: 5;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #888888;
+  font-size: 44rpx;
+  padding-right: 8rpx;
+}
+
+.middle {
+  display: flex;
+}
+
+.bottom {
+  border-top: 1rpx solid #eee;
+  font-size: 24rpx;
+  padding-top: 8rpx;
+  color: #999999;
+  text-align: right;
+}
+.caption{
+
+}

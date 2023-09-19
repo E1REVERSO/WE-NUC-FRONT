@@ -1,0 +1,14 @@
+/* pages/discList/discList.wxss */
+.container::before{
+  margin-top: 20rpx;
+}
+.info {
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 28rpx;
+  text-align: center;
+
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,32 @@
+.notice {
+  margin: 26rpx;
+  /* min-height: 709px; */
+}
+
+.container::after {
+  content: "";
+  height: 36rpx;
+}
+
+.title {
+  font-size: 34rpx;
+  /*font-weight: bold;*/
+  text-align: center;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #999999ab;
+  padding-bottom: 16rpx;
+}
+
+.bottom {
+  border-top: 1rpx solid #999999ab;
+}
+
+.detail {
+  font-size: 26rpx;
+
+}
+
+
+page {
+  background-color: #fff;
+}

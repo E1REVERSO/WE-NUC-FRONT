@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="notice" style="min-height:{{height}}px;">
+        <view class="title">
+            {{ title }}
+            <text style="color: #999999;font-size: 28rpx">
+                {{ notice_time }}
+            </text>
+        </view>
+        <view class="detail">
+            <wemark md="{{md}}" link highlight type="wemark" bindtap="onClickMark"></wemark>
+
+        </view>
+
+    </view>
+    <view class="bottom" style="display: flex;">
+        <view style="padding-top:16rpx;color: #999999;font-size: 24rpx">来自「We中北」运营团队</view>
+        <view style="padding-top: 16rpx; color:#999999;font-size: 24rpx;margin: 0 0 0 auto;">阅读：{{read || 0}} 次</view>
+    </view>
+</view>

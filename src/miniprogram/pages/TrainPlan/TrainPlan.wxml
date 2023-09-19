@@ -1,0 +1,50 @@
+<view class="container">
+  <tui-skeleton all="{{false}}" wx:if="{{loading}}" backgroundColor="#fff">
+  </tui-skeleton>
+  <view class="caption" style="z-index: 999999999;">培养计划也称教学计划</view>
+  <view class="caption">展示的是对应专业大学四年中所需要学习的课程</view>
+  <view class="caption">经过专业分流/学籍异动请下拉刷新获取最新信息</view>
+  <view class="caption">信息仅供参考 以实际课标为准</view>
+  <view class="gap" />
+  <view class="caption">我的专业</view>
+
+
+  <block wx:if="{{login}}">
+
+    <view class="main tui-skeleton" hover-class="main-hover" hover-stay-time="70" bindtap="toDetail">
+
+      <view>
+        <view class="top">
+          <view class="top__left">
+            <view class="id tui-skeleton-rect">{{info.zyh_id?info.zyh_id:'xxx123456789'}}</view>
+            <view class="name tui-skeleton-rect">{{info.zymc?info.zymc:'加载中'}}</view>
+          </view>
+          <view class="grade tui-skeleton-rect">年级：{{info.njmc?info.njmc:'xxxx'}}</view>
+        </view>
+        <view class="middle">
+          <view class="detail">
+            <view class="courses-total tui-skeleton-rect">课程数：{{info.kcs?info.kcs:'加载中'}}</view>
+            <view class="class-total tui-skeleton-rect">班级个数：{{info.bjgs?info.bjgs:'加载中'}}</view>
+            <view class="students-total tui-skeleton-rect">计划人数：{{info.jhrs?info.jhrs:'加载中'}}</view>
+            <view class="credits-total tui-skeleton-rect">最低毕业学分：{{info.zdxf?info.zdxf:'加载中'}}</view>
+
+          </view>
+
+          <view class="right">
+            <view class="label tui-skeleton-rect">{{info.dlbs?info.dlbs:'专业'}}</view>
+          </view>
+        </view>
+
+        <view class="bottom tui-skeleton-rect">
+          更新日期：{{info.dateDigit?info.dateDigit:'2000年0月0日 10:00:00'}}
+        </view>
+      </view>
+    </view>
+
+
+  </block>
+
+
+  <view class="other {{!login?'no-login':''}}" hover-class="other-hover" bindtap="toDiscList" hover-stay-time="70">
+    查看其他专业</view>
+</view>

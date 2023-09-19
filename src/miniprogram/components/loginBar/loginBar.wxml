@@ -1,0 +1,5 @@
+<!--components/unauthorizeBar/unauthorizeBar.wxml-->
+<view class="auth" bindtap="toAuth" style="bottom: {{bottom}}px;">
+  您还没有登陆，登陆后即可使用全部功能
+  <view class="auth__btn" hover-stay-time="70" hover-class="auth__btn-hover">立即登陆</view>
+</view>

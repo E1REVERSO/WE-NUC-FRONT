@@ -1,0 +1,113 @@
+/* miniprogram/pages/about/about.wxss */
+.caption {
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 24rpx;
+  margin: 8rpx 28rpx 4rpx 28rpx;
+}
+
+.gap {
+  padding: 8rpx 0;
+  width: 100%;
+  height: 2rpx;
+  color: #eee;
+}
+
+.top {
+  margin: 100rpx auto;
+  perspective: 1000rpx;
+
+  height: 240rpx;
+  width: 240rpx;
+}
+
+.box {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  transform-style: preserve-3d;
+
+  transition: all .4s;
+}
+
+.aspect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 20rpx;
+  margin-bottom: 8rpx;
+}
+
+.info+.title {
+  margin-top: 24rpx;
+}
+
+.info {
+  font-size: 24rpx;
+}
+
+.front {
+  background-color: rgba(88, 123, 218, .6);
+  transform: translateZ(120rpx);
+  
+}
+
+.bottom {
+  background-color: rgba(211, 78, 91, .6);
+  transform: translateY(50%) rotateX(-90deg);
+  
+}
+
+.right {
+  background-color: rgba(184, 89, 228, .6);
+  transform: translateX(50%) rotateY(90deg);
+  
+}
+
+.back {
+  background-color: rgba(88, 123, 218, .6);
+  transform: translateZ(-120rpx);
+  
+}
+
+.left {
+  background-color: rgba(184, 89, 228, .6);
+  transform: translateX(-50%) rotateY(90deg);
+}
+
+.container {
+  margin: 12rpx 28rpx 0 28rpx;
+}
+
+.tip-item {
+  font-size: 26rpx;
+  color: #333333;
+}
+
+.tip-item+.tip-item {
+  margin-top: 16rpx;
+}
+
+.card {
+  margin-top: 160rpx;
+
+  background-color: #fff;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.04);
+}

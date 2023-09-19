@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'yfme';
+  src: url('https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/icon/yfme.eot?sign=1c5e679705194752eda2de702f505b57&t=1633337517');
+  src: url('https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/icon/yfme.eot?sign=1c5e679705194752eda2de702f505b57&t=1633337517') format('embedded-opentype'),
+    url('https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/icon/yfme.ttf?sign=eac182dcb90fcafdbb7aa4a36781b307&t=1633337534') format('truetype'),
+    url('https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/icon/yfme.woff?sign=f4fdf2c40bab3bbd38b51e55ef6d9128&t=1633337543') format('woff'),
+    url('https://6e65-newcloud-7gyq8rjnfe82bb23-1303179792.tcb.qcloud.la/icon/yfme.svg?sign=b355f6f9a51a9887be2c0c3773a419e8&t=1633337551') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.yfme {
+  display: inline-block;
+  font: normal normal normal 14px/1 yfme;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.yfme-components:before {
+  content: "\e900";
+}
+
+.yfme-schedule:before {
+  content: "\e901";
+}
+
+.yfme-home:before {
+  content: "\e902";
+}
+
+.yfme-my:before {
+  content: "\e903";
+}

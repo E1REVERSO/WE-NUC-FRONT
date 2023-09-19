@@ -1,0 +1,12 @@
+<!--components/balance/balance.wxml-->
+<view class="main">
+  <view class="content" wx:if="{{login.username}}">
+    <view class="text">您的一卡通余额为：</view>
+    <view class="data">{{data}}</view>
+    <van-icon name="replay" color="#777" size="28rpx" bindtap="onRefresh" custom-style="{{refreshing?'animation: rotateAnimation 1s linear infinite':''}};margin-left:12rpx" wx:if="{{data != '加载中'}}" />
+
+  </view>
+  <view class="content" wx:else>
+    <view class="data">登陆后即可使用查询一卡通余额服务</view>
+  </view>
+</view>

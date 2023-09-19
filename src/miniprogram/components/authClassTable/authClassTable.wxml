@@ -1,0 +1,41 @@
+<!--components/authClassTable/authClassTable.wxml-->
+<view class="caption">这里会展示你发起的查看对方课表申请</view>
+<view class="caption">单击即可查看对方课表</view>
+<view class="caption">长按设为“Ta的课表”显示对象</view>
+<view class="gap"></view>
+
+<view class="card" bindtap="createShare">
+  <view class="create-share" hover-class="create-share-hover" hover-stay-time="70">分享我的课表</view>
+</view>
+
+<view class="card" wx:if="{{data.length}}">
+  <block wx:for="{{data}}" wx:key="_id">
+
+    <view class="item" hover-stay-time="70" hover-class="item-hover" data-doc="{{item._id}}"
+      bindtap="{{item.valid?'choosePermission':''}}" bindlongpress="{{item.valid?'setImportant':''}}">
+      <view class="left">
+        <image class="avatar" src="{{item.targetInfo.avatar}}"></image>
+      </view>
+
+      <view class="middle">
+        <view>
+          <view class="nick">授权来自{{item.targetInfo.nick}}</view>
+          <view class="start">申请时间：{{item.startTime}}</view>
+          <view class="end">结束时间：{{item.endTime}}</view>
+        </view>
+      </view>
+
+      <view class="right">
+        <view wx:if="{{item.acceptTime=='未接受'}}" class="accept">未接受</view>
+        <view wx:elif="{{!item.valid}}" class="accept">已过期</view>
+        <view wx:else class="accept allow">已接受</view>
+      </view>
+
+    </view>
+  </block>
+
+</view>
+
+<block wx:else>
+  <van-empty description="你还没有授权喔 ～" />
+</block>

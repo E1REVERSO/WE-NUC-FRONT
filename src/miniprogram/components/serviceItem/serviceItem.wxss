@@ -1,0 +1,56 @@
+/* components/serviceItem/serviceItem.wxss */
+.main {
+  display: inline-block;
+  background-color: #fff;
+  padding: 16rpx;
+  border-radius: 8rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1);
+  margin-bottom: 28rpx;
+
+  /* width: 304rpx;
+  height: 408rpx; */
+  width: 336rpx;
+  height: 440rpx;
+  position: relative;
+  color: #333333;
+}
+
+.content {
+  padding: 16rpx;
+  background-color: #fff;
+}
+
+
+.qrcode {
+  height: 304rpx;
+  width: 304rpx;
+  position: absolute;
+  bottom: 16rpx;
+  left: 16rpx;
+  right: 16rpx;
+}
+
+.qrcode image {
+  height: 304rpx;
+  width: 304rpx;
+}
+
+.name {
+  font-size: 28rpx;
+}
+
+.part {
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.signature {
+  font-size: 24rpx;
+
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

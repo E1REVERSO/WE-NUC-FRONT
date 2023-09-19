@@ -1,0 +1,44 @@
+.group {
+    padding: 0 28rpx;
+    display: inline-flex;
+    gap: 12rpx;
+}
+
+.big {
+    width: 339rpx;
+    height: 320rpx;
+}
+
+.small {
+    width: 339rpx;
+}
+
+.info {
+    padding: 6rpx 28rpx;
+    margin-top: 24rpx;
+    display: flex;
+    align-items: center;
+    gap: 4rpx;
+
+
+}
+
+.info .title {
+
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
+
+}
+
+.subTitle {
+    font-size: 24rpx;
+    font-weight: normal;
+    color: #888;
+}
+
+.icon {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+}

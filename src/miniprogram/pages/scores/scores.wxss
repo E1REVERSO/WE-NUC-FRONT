@@ -1,0 +1,102 @@
+/* miniprogram/pages/scores/scores.wxss */
+
+.tab {
+  background-color: #fff;
+  border-radius: 8rpx;
+  box-shadow: 0 6rpx 6rpx rgba(120, 120, 120, 0.1);
+  overflow: hidden;
+}
+
+.tab+.termInfo {
+  margin-top: 20rpx;
+}
+.qiun-charts {
+  padding-top: 64rpx;
+  width: 730rpx;
+  height: 500rpx;
+  background-color: #FFFFFF;
+}
+.charts {
+  width:730rpx;
+  height: 500rpx;
+  background-color: #FFFFFF;
+}
+
+.termInfo {
+  background-color: #fff;
+  border-radius: 8rpx;
+  box-shadow: 0 6rpx 6rpx rgba(120, 120, 120, 0.1);
+  overflow: hidden;
+  padding: 12rpx;
+
+  color: #999999;
+  font-size: 24rpx;
+
+  margin-bottom: 28rpx;
+}
+
+.termInfo text {
+  font-weight: bold;
+}
+
+.termInfo .termInfo__group+.termInfo__group {
+  margin-top: 24rpx;
+}
+
+.termInfo .termInfo__group view {
+  margin-top: 4rpx;
+}
+
+.termInfo__title {
+  color: #333333;
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+}
+
+.tips-center {
+  color: #999999;
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.caption {
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 24rpx;
+  margin: 8rpx 28rpx 4rpx 28rpx;
+}
+
+.gap {
+  padding: 8rpx 0;
+  width: 100%;
+  height: 2rpx;
+  color: #eee;
+}
+
+.left-icons {
+  display: flex;
+}
+
+.left-icons view+view {
+  margin-left: 12rpx;
+
+}
+
+
+.switches {
+  margin: 64rpx 32rpx 48rpx 32rpx;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+
+  margin-top: 12rpx;
+}
+
+.content__item {
+  flex: 1;
+  margin: 12rpx;
+}

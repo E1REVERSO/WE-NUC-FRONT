@@ -1,0 +1,28 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class="container">
+  <view class="title">体育管理账号绑定</view>
+  <view class="subTitle">欢迎使用We中北</view>
+  <view class="form">
+    <view class="formItem">
+      <input model:value="{{account}}" placeholder="请输入您的体育管理账号" type="text" bindinput="uninput" />
+    </view>
+    <view class="formItem">
+      <input model:value="{{password}}" placeholder="请输入您的体育管理密码" type="password" bindinput="pwinput" />
+    </view>
+  </view>
+  <!-- <view class="forget" ><view class="cont" bindtap="forgetPwd"><text style="text-decoration: underline">忘记密码？</text></view></view> -->
+  <view class="btn" bindtap="login">
+    立即登录
+  </view>
+
+  <view class="qalist">
+    <view class="qa">Q:忘记密码怎么办？</view>
+  <view class="qa">A:联系本班班长进行重置</view>
+  </view>
+
+  <view class="bottom tips">
+    <view>请提前确认账号密码正确</view>
+    <view>不要多次尝试</view>
+
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<!--miniprogram/pages/ctPermissions/ctPermissions.wxml-->
+
+<view class="container">
+  <view class="caption">这里会展示你对他人的课程表授权</view>
+  <view class="caption">你可以同意别人发出的申请</view>
+  <view class="caption">你也可以撤销已经同意的申请</view>
+  <view class="gap"></view>
+  <view class="card" wx:if="{{data.length}}">
+    <block wx:for="{{data}}" wx:key="_id">
+
+      <view class="item">
+        <view class="left">
+          <image class="avatar" src="{{item.targetInfo.avatar}}"></image>
+        </view>
+
+        <view class="middle">
+          <view>
+            <view class="nick">授权给{{item.targetInfo.nick}}</view>
+            <view class="start">申请时间：{{item.startTime}}</view>
+            <view class="end">结束时间：{{item.endTime}}</view>
+          </view>
+        </view>
+
+        <view class="right">
+          <view wx:if="{{item.acceptTime=='未接受'}}" class="btn accept" bindtap="accept" data-doc="{{item._id}}">同意授权
+          </view>
+          <view wx:elif="{{!item.valid}}" class="out-date">已过期</view>
+          <view wx:else class="btn cancel" bindtap="cancel" data-doc="{{item._id}}">撤销授权</view>
+        </view>
+
+      </view>
+    </block>
+
+  </view>
+
+  <block wx:else>
+    <van-empty description="你还没有授权喔 ～" />
+  </block>
+
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "研招数据",
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+    "associate": "/components/associate/associate"
+  }
+}

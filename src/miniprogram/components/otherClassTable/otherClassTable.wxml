@@ -1,0 +1,150 @@
+<view class="mask {{closeMaskT ? 'out': 'in'}}" wx:if="{{show}}" catchtap="closeMask">
+  <view class="mask__content">
+    <block wx:for="{{info_data}}" wx:key="index">
+      <view class="info__item {{color[item.kcmc +'-'+ item.zcd]}}" catchtap="tap">
+        <view class="info__item__name">{{item.kcmc}}</view>
+        <view wx:if="{{item.cdmc}}">上课教室：{{item.cdmc}}</view>
+        <view wx:if="{{item.zcd}}">开课周数：{{item.zcd}}</view>
+        <view wx:if="{{item.kcxszc}}">学时安排：{{item.kcxszc}}</view>
+        <view wx:if="{{item.xm}}">任课教师：{{item.xm}}</view>
+        <view wx:if="{{item.zcmc}}">教师职称：{{item.zcmc}}</view>
+        <view wx:if="{{item.kcxz}}">课程性质：{{item.kcxz}}</view>
+        <view wx:if="{{item.khfsmc}}">考试类型：{{item.khfsmc}}</view>
+        <view wx:if="{{item.xf}}">课程学分：{{item.xf}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<wxs module="m1">
+  // function isEqua()l
+  var tempDat
+  var ind = 0
+  function getMain(item, day, index) {
+    if (index === ind) {
+      return tempDat
+    } else {
+      ind = index
+      tempDat = main(item, day)
+      return tempDa
+    }
+  }
+  function main(item, day) {
+    var list = []
+    for (var i = 0; i < day.length; i++) {
+      var o1 = day[i].sections
+      var o2 = item.sections
+      if (o2 && JSON.stringify(o1) == JSON.stringify(o2)) {
+        list.push(day[i])
+      }
+    }
+    list.sort(function (a, b) {
+      return b['z-index'] - a['z-index']
+    })
+    tempDat = [list]
+    return [list]
+  }
+
+  module.exports.main = main;
+</wxs>
+
+<view class="class-table" wx:if="{{doc}}">
+
+  <view class="head">
+    <view class="left flex-center">{{month}}</view>
+
+    <block wx:for="{{days}}" wx:key="*this">
+      <view class="cell flex-center">
+        <view class="{{(index + 1) == day?'active':''}}">
+          <view class="day">周{{item}}</view>
+          <view class="date">{{calendar[index]}}</view>
+        </view>
+
+      </view>
+    </block>
+
+  </view>
+  <view class="body">
+    <block wx:for="{{11}}" wx:key="index">
+      <view class="line {{(item + 1) % 4 == 0 ? 'weight' : ''}}" style="top: {{((item + 1)/11)*100}}%;">
+      </view>
+    </block>
+
+    <view class="left">
+      <view class="left__column">
+        <view class="section flex-center" wx:for="{{11}}" wx:key="*this">
+          <view class="section__item flex-center">
+            <view>
+              <view class="section__name">{{item + 1}}</view>
+              <view class="section__time">{{time[item + 1][0]}}</view>
+              <view class="section__time">{{time[item + 1][1]}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="column" wx:for="{{showTable}}" wx:for-item="day" wx:for-index="i" wx:key="i">
+      <block wx:for="{{day}}" wx:key="index" wx:for-index='idx' wx:for-item="item">
+        <block wx:for="{{m1.main(item,day)}}" wx:key="index" wx:for-item="list">
+
+          <view class="cell {{item.kcmc?'no-empty':'empty'}} flex-center"
+            style="top: {{((item.sections[0].section - 1)/11)*100}}%;height: {{(item.sections.length/11)*100}}%;z-index: {{item['z-index']}}"
+            bindtap="onClickItem" data-data="{{list}}" wx:if="{{item.kcmc == list[0].kcmc && item.zcd == list[0].zcd}}">
+
+            <view class="cell__content flex-center {{color[item.kcmc +'-'+ item.zcd]}}">
+              <view style="width: 100%;">
+                <view class="info isThisWeek"
+                  wx:if="{{color[item.kcmc +'-'+ item.zcd] == 'bg-color-none' && item.sections.length > 1}}">
+                  {{showWeekEnd?'「-」':'「非本周」'}}
+                </view>
+                <view class="info what" style="{{item.sections.length > 1?'':'-webkit-line-clamp: 1;'}}">
+                  {{item.kcmc}}
+                </view>
+                <view class="info where">{{item.cdmc}}</view>
+                <view class="info who"
+                  wx:if="{{item.sections.length > 1 && color[item.kcmc +'-'+ item.zcd]!='bg-color-none' && !showWeekEnd}}">
+                  {{item.xm}}
+                </view>
+              </view>
+              <view wx:if="{{list.length > 1}}" class="cell__bar" />
+
+            </view>
+          </view>
+
+        </block>
+      </block>
+    </view>
+
+    <!-- <view class="column" wx:for="{{showTable}}" wx:key="index">
+      <view wx:for="{{item}}" bindtap="onClickItem" data-item="{{item}}" data-color="{{color[item[0].kcmc]}}"
+        class="cell flex-center {{color[item[0].kcmc]}} {{item[0].kcmc?'no-empty':'empty'}}"
+        style="flex: {{item.sections.length?item.sections.length:1}};" wx:key="cd_id" data-kch="{{item.kch}}"
+        data-xqj="{{item.xqj}}">
+        <view class="cell__content">
+          <view class="info isThisWeek" wx:if="{{color[item.kcmc]=='bg-color-none' && item.sections.length > 1}}">
+            {{showWeekEnd?'「-」':'「非本周」'}}
+          </view>
+
+          <view class="info what" style="{{item.sections.length > 1?'':'-webkit-line-clamp: 1;'}}">
+            {{item[0].kcmc}}
+          </view>
+
+          <view class="info where">{{item.cdmc}}</view>
+
+          <view class="info who"
+            wx:if="{{item.sections.length > 1 && color[item.kcmc]!='bg-color-none' && !showWeekEnd}}">{{item.xm}}
+          </view>
+        </view>
+
+      </view>
+    </view> -->
+
+    <view wx:if="{{no_class}}" class="no-class">本周无课</view>
+  </view>
+
+</view>
+
+<block wx:else>
+  <van-empty description="你还没有选择查看谁的课表喔 ～" />
+</block>

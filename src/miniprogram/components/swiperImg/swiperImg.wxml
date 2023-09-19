@@ -1,0 +1,13 @@
+<!--components/swiper/swiper.wxml-->
+<view class="main" style="z-index: -9999;">
+  <swiper circular autoplay interval="5000" duration="300" indicator-active-color="rgb(25,135,250)" class="lbt" style="z-index: -999999;">
+
+    <block wx:for="{{ imgs }}" wx:key="image">
+      <swiper-item class="swiper-item">
+
+        <view class="swiper-content" bindtap="action" data-type="{{item.type}}" data-content1="{{item.content1}}" data-content2="{{item.content2}}" style="background-image: url({{item.image}});"></view>
+
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

@@ -1,0 +1,5 @@
+<!--components/navIcon/navIcon.wxml-->
+<view class="main" hover-class="main-hover" catchtap="tap" hover-stay-time="70">
+  <view class="num" wx:if="{{num}}">{{num}}</view>
+  <van-icon class-prefix="{{prefix}}" name="{{iconName}}" />
+</view>

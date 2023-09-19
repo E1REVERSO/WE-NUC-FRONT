@@ -1,0 +1,285 @@
+{
+    "setting": {},
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/pointCalc/pointCalc",
+                    "pathName": "pages/pointCalc/pointCalc",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/login/login",
+                    "pathName": "pages/login/login",
+                    "query": "back=1",
+                    "scene": null
+                },
+                {
+                    "name": "tabbar/tabbar",
+                    "pathName": "tabbar/tabbar",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/createCTPermission/createCTPermission",
+                    "pathName": "pages/createCTPermission/createCTPermission",
+                    "query": "doc=1231231",
+                    "scene": null
+                },
+                {
+                    "name": "pages/about/about",
+                    "pathName": "pages/about/about",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/updateLog/updateLog",
+                    "pathName": "pages/updateLog/updateLog",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/days/days",
+                    "pathName": "pages/days/days",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/daysSet/daysSet",
+                    "pathName": "pages/daysSet/daysSet",
+                    "query": "doc=2d44d6c2611f423a0617a20b66c88374&type=user",
+                    "scene": null
+                },
+                {
+                    "name": "pages/userNeedToKnow/userNeedToKnow",
+                    "pathName": "pages/userNeedToKnow/userNeedToKnow",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/discList/discList",
+                    "pathName": "pages/discList/discList",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/TrainPlan/TrainPlan",
+                    "pathName": "pages/TrainPlan/TrainPlan",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/more/more",
+                    "pathName": "pages/more/more",
+                    "query": "abc=1f5asd4f5sda456f",
+                    "scene": null
+                },
+                {
+                    "name": "pages/login/login",
+                    "pathName": "pages/login/login",
+                    "query": "abc=1f5asd4f5sda456f",
+                    "scene": null
+                },
+                {
+                    "name": "pages/examList/examList",
+                    "pathName": "pages/examList/examList",
+                    "query": "",
+                    "scene": null,
+                    "partialCompile": {
+                        "enabled": true,
+                        "pages": []
+                    }
+                },
+                {
+                    "name": "pages/classTable/classTable",
+                    "pathName": "pages/classTable/classTable",
+                    "query": "",
+                    "scene": null,
+                    "partialCompile": {
+                        "enabled": true,
+                        "pages": []
+                    }
+                },
+                {
+                    "name": "pages/classTable/classTable",
+                    "pathName": "pages/classTable/classTable",
+                    "query": "",
+                    "scene": null,
+                    "partialCompile": {
+                        "enabled": true,
+                        "pages": []
+                    }
+                },
+                {
+                    "name": "pages/extraLogin/extraLogin",
+                    "pathName": "pages/extraLogin/extraLogin",
+                    "query": "",
+                    "scene": null,
+                    "partialCompile": {
+                        "enabled": true,
+                        "pages": []
+                    }
+                },
+                {
+                    "name": "pages/outSell/outSell",
+                    "pathName": "pages/outSell/outSell",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/outSell/outSell",
+                    "pathName": "pages/outSell/outSell",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/empty/empty",
+                    "pathName": "pages/empty/empty",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/entranceExam/entranceExam",
+                    "pathName": "pages/entranceExam/entranceExam",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/activities/lottery/lottery",
+                    "pathName": "pages/activities/lottery/lottery",
+                    "query": "scene=cd045e7561530fb211ed6ed51fabf73c",
+                    "scene": null
+                },
+                {
+                    "name": "pages/extra/avatar/index",
+                    "pathName": "pages/extra/avatar/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/scores/scores",
+                    "pathName": "pages/scores/scores",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/line/index",
+                    "pathName": "pages/line/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/scoresFx/scoresFx",
+                    "pathName": "pages/scoresFx/scoresFx",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/washers/washers",
+                    "pathName": "pages/washers/washers",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/peTest/peTest",
+                    "pathName": "pages/peTest/peTest",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/peQuery/peQuery",
+                    "pathName": "pages/peQuery/peQuery",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/physicalTestCalculator/index",
+                    "pathName": "pages/physicalTestCalculator/index",
+                    "query": "",
+                    "scene": null,
+                    "partialCompile": {
+                        "enabled": true,
+                        "pages": []
+                    }
+                },
+                {
+                    "name": "pages/map/map",
+                    "pathName": "pages/map/map",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/canteenIndex/canteenIndex",
+                    "pathName": "/pages/canteenIndex/canteenIndex",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/findCourse/findCourse",
+                    "pathName": "pages/findCourse/findCourse",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/coupons/coupons",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/books/books",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/bookDetail/bookDetail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/pointCalc/pointCalc",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/executePlan/executePlan",
+                    "pathName": "pages/executePlan/executePlan",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/phoneList/phoneList",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/notice/notice",
+                    "query": "doc=be7662ce6345a47d00b077476ddac86c",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/sc/sc",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

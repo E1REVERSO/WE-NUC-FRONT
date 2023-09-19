@@ -1,0 +1,27 @@
+/* pages/extraAccounts/extraAccounts.wxss */
+.left-icons {
+  display: flex;
+}
+
+/* .left-icons__item+.left-icons__item {
+} */
+
+.left-icons view+view {
+  margin-left: 12rpx;
+
+}
+
+.item+.item {
+  margin-top: 24rpx;
+}
+
+.caption {
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 24rpx;
+  margin: 8rpx 28rpx 4rpx 28rpx;
+  margin-top: 16rpx;
+}
+
+.caption +.caption {
+  margin-top: 0;
+}

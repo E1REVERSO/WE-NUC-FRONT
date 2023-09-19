@@ -1,0 +1,120 @@
+/* pages/extra/physicalTestCalculator/index.wxss */
+.input-group {
+  background-color: #fff;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.input-group+.input-group {
+  margin-top: 12rpx;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.iright {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.name {
+  flex: 3;
+  color: #555555;
+}
+
+.input {
+  flex: 6;
+  /* color: ; */
+  color: #333333;
+}
+
+.unit {
+  flex: 4;
+  color: #999999;
+  text-align: right;
+}
+
+.item+.item {
+  /* border-top: 1rpx solid #eeeeee; */
+  margin-top: 24rpx;
+}
+
+.item {
+  padding: 8rpx;
+  font-size: 26rpx;
+}
+
+.info {
+  color: #3A79FE;
+  display: inline;
+  margin-left: 8rpx;
+}
+
+.card {
+  background-color: #fff;
+  padding: 12rpx;
+  border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1);
+  margin-top: 24rpx;
+
+  flex: 1;
+}
+
+.confirm {
+  color: #3A79FE;
+  font-size: 28rpx;
+  padding: 8rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm.sec {
+  color: #999999;
+}
+
+.blue {
+  color: #3A79FE;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.grade {
+  display: flex;
+  padding: 24rpx 0;
+  margin: 24rpx 0;
+  border-radius: 12rpx;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.grade-item {
+  flex: 1;
+  text-align: center;
+}
+
+.grade-item-key {
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.grade-item-val {
+  color: #3A79FE;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.grade-item-val-label {
+  font-size: 24rpx;
+  font-weight: normal;
+}
+
+.btns {
+  display: flex;
+  gap: 12rpx;
+}

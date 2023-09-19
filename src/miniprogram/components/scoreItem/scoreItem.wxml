@@ -1,0 +1,41 @@
+<!--components/scoreItem/scoreItem.wxml-->
+<view class="scoreItem">
+  <view class="course-name">
+    {{obj.kcmc}}
+  </view>
+
+  <view class="course-score">
+    <view>
+      <view class="course-score__valid-score">
+        {{obj.bfzcj}}
+      </view>
+      <view class="course-score__point">
+        绩点{{obj.jd}}
+      </view>
+    </view>
+  </view>
+
+  <view class="course-info">
+    <view class="course-info__item">
+      <view class="course-info__item__val">
+        {{obj.kcxzmc}}
+      </view>
+    </view>
+
+    <view class="course-info__item">
+      <view class="course-info__item__key">
+        学分
+      </view>
+      <view class="course-info__item__val">
+        {{xf}}
+      </view>
+    </view>
+
+    <view class="course-info__item">
+      <view class="course-info__item__val">
+        {{obj.ksxz}}
+      </view>
+    </view>
+
+  </view>
+</view>

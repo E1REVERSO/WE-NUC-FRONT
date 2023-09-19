@@ -1,0 +1,25 @@
+<!--components/minorCourse/minorCourse.wxml-->
+<view class="main">
+
+  <view wx:for="{{data}}" wx:key="kcmc" class="item bg-color-{{index}}">
+    <view class="name">{{item.kcmc}}</view>
+    <view class="info">
+
+      <view class="info__item">
+        <view class="info__item__val">[{{item.xf}}学分]\t[{{item.qsjsz}}]</view>
+      </view>
+
+      <view class="info__item">
+        <view class="info__item__key">教师姓名</view>
+        <view class="info__item__val">{{item.jsxm}}</view>
+      </view>
+
+      <view class="info__item" wx:if="{{item.username}}">
+        <view class="info__item__key">来自账户</view>
+        <view class="info__item__val">{{item.username}}</view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

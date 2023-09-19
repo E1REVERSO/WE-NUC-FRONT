@@ -1,0 +1,42 @@
+<!--miniprogram/pages/about/about.wxml-->
+<!-- <text>miniprogram/pages/about/about.wxml</text> -->
+<view class="top">
+  <view class="box" hover-class="box-hover">
+    <view class="aspect front">
+      <view>
+        <view class="title">程序作者</view>
+        <view class="info">yfme</view>
+        <view class="info">Tshoiasc</view>
+      </view>
+    </view>
+    <view class="aspect bottom">
+      <view>
+        <view class="title">UI设计 & 前端开发</view>
+        <view class="info">yfme</view>
+
+        <view class="title">后端开发 & 网络工程</view>
+        <view class="info">Tshoiasc</view>
+      </view>
+    </view>
+    <view class="aspect right">
+      <view>
+        <view class="title">内容运营</view>
+        <view class="info">清曙工作室</view>
+      </view>
+    </view>
+
+    <view class="aspect back"></view>
+    <view class="aspect left"></view>
+    <!-- <view class="aspect top"></view> -->
+  </view>
+</view>
+<view class="container">
+  <view class="caption">本程序部分使用Vant Weapp组件库，并使用微信小程序原生开发；</view>
+  <view class="caption">首页欢迎卡片数据来自「單向历」使用OCR提取，如有侵权请告知我们立即下线；</view>
+  <view class="caption">部分页面使用第三方导航栏（github.com/lingxiaoyi/navigation-bar），并有所修改；</view>
+  <view class="caption">本程序为公益项目，其可能产生的收益全部用于运营以及项目延续；</view>
+  <view class="caption">由山西清曙网络科技有限公司代为运营，其运营权利及义务包括用户反馈的上报、功能需求提出、公告（包括轮播图）的制作和发布、内容策划、活动的策划和执行等；</view>
+  <view class="caption">程序部分逻辑依托于微信小程序云开发，部分数据的获取使用阿里云服务器，除此之外所有原始数据不会有第三方接触（程序被破解、天灾等不可抗力除外）；</view>
+  <view class="caption">程序涉及教务系统内容仅供参考，以教务系统为准，程序作者以及运营者不对任何内容负责；</view>
+  <view class="caption">程序作者保留最终解释权。</view>
+</view>

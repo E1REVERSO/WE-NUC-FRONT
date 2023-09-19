@@ -1,0 +1,39 @@
+/* components/switchBlock/switchBlock.wxss */
+.main {
+  height: 220rpx;
+  width: 100%;
+  background-color: #eeeeee;
+  border-radius: 24rpx;
+  padding: 24rpx;
+  color: #666666;
+  box-shadow: 4rpx 4rpx 8rpx #eeeeeeaa;
+  position: relative;
+
+  margin: 12rpx;
+
+  transition: all .2s;
+}
+
+.main.active {
+  background-color: #007CF9;
+  color: #ffffff;
+  box-shadow: 4rpx 4rpx 8rpx #007CF966;
+}
+
+.icon {
+  font-size: 52rpx;
+  padding: 0 12rpx;
+}
+
+.text {
+  font-size: 24rpx;
+  position: absolute;
+  left: 28rpx;
+  bottom: 28rpx;
+  right: 28rpx;
+}
+
+.desc {
+  font-size: 20rpx;
+  margin-top: 4rpx;
+}

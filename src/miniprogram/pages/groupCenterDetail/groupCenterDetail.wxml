@@ -1,0 +1,174 @@
+<view class="back" style="top: {{safeArea.top}}px;" bindtap="back">
+  <van-icon name="arrow-left" />
+</view>
+
+<view style="position: relative;">
+  <view class="head_bg"
+    style="padding-top: {{safeArea.top + 32}}px;background: url(http://i2.sinaimg.cn/travel/2013/0818/U9522P704DT20130818082229.jpg);background-size: 100% 100%;">
+
+    <view style="opacity: 0;">
+      <image class="avatar" src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/icon/中北大学.png">
+      </image>
+      <view class="groupInfo">
+        <view class="title">中北大学</view>
+        <view class="introduction">这是一个十分牛逼的组织</view>
+      </view>
+
+      <view class="admins">
+        <view class="admins_title">管理团队</view>
+        <view class="lotAvatar">
+
+          <view class="item">
+            <image class="crown"
+              src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/icon/皇冠.png">
+            </image>
+            <image
+              src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+              class="indi_avatar"></image>
+
+          </view>
+
+          <view class="item">
+            <image
+              src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+              class="indi_avatar"></image>
+
+          </view>
+
+
+          <view class="item">
+            <image
+              src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+              class="indi_avatar"></image>
+
+          </view>
+
+
+          <view class="item">
+            <image
+              src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+              class="indi_avatar"></image>
+
+          </view>
+
+
+          <view class="item">
+            <image
+              src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+              class="indi_avatar"></image>
+
+          </view>
+
+
+          <view class="item">
+            <image
+              src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+              class="indi_avatar"></image>
+
+          </view>
+
+
+          <view class="item">
+            <image
+              src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+              class="indi_avatar"></image>
+
+          </view>
+
+
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+  <view class="head_bg noblur" style="position: absolute;top: 0;left: 0;right: 0;padding-top: {{safeArea.top + 32}}px;">
+
+    <image class="avatar" src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/icon/中北大学.png">
+    </image>
+    <view class="groupInfo">
+      <view class="title">中北大学</view>
+
+      <view class="introduction">这是一个十分牛逼的组织</view>
+    </view>
+
+    <view class="admins">
+      <view class="admins_title">管理团队</view>
+      <view class="lotAvatar">
+
+        <view class="item">
+          <image class="crown"
+            src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/icon/皇冠.png">
+          </image>
+          <image
+            src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+            class="indi_avatar"></image>
+
+        </view>
+
+        <view class="item">
+          <image
+            src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+            class="indi_avatar"></image>
+
+        </view>
+
+
+        <view class="item">
+          <image
+            src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+            class="indi_avatar"></image>
+
+        </view>
+
+
+        <view class="item">
+          <image
+            src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+            class="indi_avatar"></image>
+
+        </view>
+
+
+        <view class="item">
+          <image
+            src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+            class="indi_avatar"></image>
+
+        </view>
+
+
+        <view class="item">
+          <image
+            src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+            class="indi_avatar"></image>
+
+        </view>
+
+
+        <view class="item">
+          <image
+            src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJHibZfdTXHicnjqeMfsGCmt9jpUxR77fSw0KQ6cictJh8t4VLHAVRHcfVUNFKF6pEicnicYVVwyiclDZfw/132"
+            class="indi_avatar"></image>
+
+        </view>
+
+
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+
+
+
+<view class="doing" animated>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="组织动态">今天东区厕所大扫除</van-tab>
+    <van-tab title="组织公告">yfme因嫖娼被罢免</van-tab>
+    <van-tab title="活跃度排行">排行榜</van-tab>
+  </van-tabs>
+</view>>

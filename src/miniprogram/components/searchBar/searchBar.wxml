@@ -1,0 +1,5 @@
+<!--components/searchBar/searchBar.wxml-->
+<view class="main">
+  <input class="input" type="text" bindinput="onInput" placeholder="输入专业名称或专业编号..." />
+  <view class="submit" hover-class="submit-hover" bindtap="{{disable?'':'onSearch'}}" hover-stay-time="70">搜索</view>
+</view>

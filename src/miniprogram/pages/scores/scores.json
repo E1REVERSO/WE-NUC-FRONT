@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "成绩查询",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "switchBlock": "/components/switchBlock/switchBlock",
+    "scoreItem": "/components/scoreItem/scoreItem"
+  }
+}

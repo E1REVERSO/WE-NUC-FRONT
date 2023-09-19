@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "教学执行计划",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "van-tag": "@vant/weapp/tag/index",
+    "mp-sticky": "@miniprogram-component-plus/sticky",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

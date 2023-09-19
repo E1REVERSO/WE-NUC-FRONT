@@ -1,0 +1,7 @@
+<view class="box" wx:if="{{SHOW_TOP}}" style="top:{{custom?navbarHeight:0}}px;">
+  <view class='arrow' style="margin-right:{{arrowR}}px;"></view>
+  <view class='body' bindtap='hidden' style="margin-right:{{bodyR}}px;">
+    <text class="tips">点击 ...「添加到我的小程序」\n就可以直接微信下拉使用啦</text>
+    <image src="cloud://cloud1-0glyq4v2627b233d.636c-cloud1-0glyq4v2627b233d-1306502030/static/add2my.png" class="logo"></image>
+  </view>
+</view>

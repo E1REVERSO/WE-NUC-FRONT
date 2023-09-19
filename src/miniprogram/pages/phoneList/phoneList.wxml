@@ -1,0 +1,51 @@
+<view class="search">
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" />
+</view>
+<view class="searchList" wx:if="{{searches.length}}">
+  <block wx:for="{{searches}}" wx:key="id">
+    <view class="item" hover-class="hover-item" bindtap="onClickItem" hover-stay-time="70" data-item="{{item}}">
+      <view class="box">
+        <view class="titles">
+          <view class="title">{{item.name}}</view>
+          <view class="tag" style="margin-left: 12rpx;">{{item.type}}</view>
+        </view>
+
+        <view class="address">{{item.address}}</view>
+        <view class="phone">{{item.phone}} ({{item.userName}})</view>
+      </view>
+
+      <view class="phone-icon">
+        <van-icon name="phone-o" size="24" color="#666" />
+      </view>
+    </view>
+  </block>
+
+</view>
+<view class="phoneList" wx:else>
+  <view class="left">
+    <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+      <block wx:for="{{data}}" wx:key="id">
+        <van-sidebar-item title="{{item.name}}" />
+      </block>
+    </van-sidebar>
+  </view>
+  <view class="right">
+    <block wx:for="{{current_catagory}}" wx:key="id">
+      <view class="item" hover-class="hover-item" bindtap="onClickItem" hover-stay-time="70" data-item="{{item}}">
+        <view class="box">
+          <view class="title">{{item.name}}</view>
+          <view class="address">{{item.address}}</view>
+          <view class="phone">{{item.phone}} ({{item.userName}})</view>
+        </view>
+
+        <view class="phone-icon">
+          <van-icon name="phone-o" size="24" color="#666" />
+        </view>
+      </view>
+
+    </block>
+
+  </view>
+
+</view>
+<noMore backgroundColor="#f6f6f6" text="欢迎联系客服投稿" />

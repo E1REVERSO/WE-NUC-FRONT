@@ -1,0 +1,36 @@
+/* components/briefMsg/briefMsg.wxss */
+.card {
+  background-color: #fff;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1);
+
+  margin-bottom: 24rpx;
+  /* margin-top: 12rpx; */
+}
+
+.item {
+  font-size: 28rpx;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  color: #999999;
+}
+
+.item+.item {
+  margin-top: 12rpx;
+}
+
+.item__chirld+.item__chirld {
+  margin-left: 12rpx;
+}
+
+.dot {
+  height: 8rpx;
+  width: 8rpx;
+  background-color: #333333;
+  border-radius: 50%;
+}

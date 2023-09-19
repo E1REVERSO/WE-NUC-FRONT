@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "mainMenu": "/components/mainMenu/mainMenu"
+  }
+}

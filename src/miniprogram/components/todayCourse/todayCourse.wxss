@@ -1,0 +1,67 @@
+/* components/todayCourse/todayCourse.wxss */
+.head {
+  display: flex;
+  position: relative;
+}
+
+.title {
+  margin-top: 48rpx;
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 12rpx;
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: right;
+  position: absolute;
+  bottom: 12rpx;
+  right: 0;
+}
+
+.card {
+  background-color: #fff;
+  padding: 12rpx;
+  /* border-radius: 12rpx; */
+  border-radius: 20rpx;
+  /* box-shadow: 4rpx 4rpx 8rpx rgba(172, 172, 172, 0.1); */
+  border: 2rpx solid #eeeeee;
+
+  min-height: 240rpx;
+}
+
+.info {
+  margin: 8rpx;
+  padding: 96rpx 8rpx;
+  border-radius: 6rpx;
+  background-color: #fafafa;
+  color: #999999;
+  font-size: 32rpx;
+
+  text-align: center;
+}
+
+.info.login {
+  background-color: rgba(255, 239, 239, .6);
+  color: rgba(238, 10, 36, .6);
+}
+
+.loading {
+  height: 56rpx;
+  width: 56rpx;
+  margin: 20rpx auto;
+}
+
+.loading__img {
+  height: 56rpx;
+  width: 56rpx;
+}
+
+.text {
+  font-size: 24rpx;
+  color: #888888;
+  text-align: center;
+  margin-top: 24rpx;
+}
